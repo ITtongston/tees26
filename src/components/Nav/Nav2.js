@@ -11,7 +11,7 @@ const Nav2 = () => {
   const [scrolling, setScrolling] = useState(false)
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState({})
 
-  const linkClass = "hover:text-yellow-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer"
+  const linkClass = "hover:text-red-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +22,7 @@ const Nav2 = () => {
   }, [])
 
   const desktopDropdown = (title, items) => (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left" key={title}>
       {({ open }) => (
         <>
           <Menu.Button className={`${linkClass} cursor-pointer inline-flex items-center gap-1`}>
@@ -35,9 +35,29 @@ const Nav2 = () => {
           <Menu.Items className="absolute z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               {items.map((item, index) => (
-                <Menu.Item key={index}>
+                <Menu.Item key={`${title}-${index}`}>
                   {({ active }) =>
-                    item.scroll ? (
+                    item.external ? (
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block px-4 py-2 text-sm font-semibold cursor-pointer ${
+                          active ? "bg-yellow-50 text-red-600" : "text-gray-700 hover:bg-yellow-50"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : item.isPage ? (
+                      <Link
+                        href={item.href}
+                        className={`block px-4 py-2 text-sm font-semibold cursor-pointer ${
+                          active ? "bg-yellow-50 text-red-600" : "text-gray-700 hover:bg-yellow-50"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
                       <ScrollLink
                         to={item.href}
                         spy={true}
@@ -45,21 +65,11 @@ const Nav2 = () => {
                         offset={-70}
                         duration={500}
                         className={`block px-4 py-2 text-sm font-semibold cursor-pointer ${
-                          active ? "bg-yellow-100 text-red-600" : "text-gray-700 hover:bg-yellow-50"
+                          active ? "bg-yellow-50 text-red-600" : "text-gray-700 hover:bg-yellow-50"
                         }`}
                       >
                         {item.label}
                       </ScrollLink>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        target={item.external ? "_blank" : "_self"}
-                        className={`block px-4 py-2 text-sm font-semibold ${
-                          active ? "bg-yellow-100 text-red-600" : "text-gray-700 hover:bg-yellow-50"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
                     )
                   }
                 </Menu.Item>
@@ -72,23 +82,36 @@ const Nav2 = () => {
   )
 
   const dropdowns = {
+    "Agenda / Programme": [
+      { label: "TES 2026 Full Agenda", href: "agenda-section" },
+      { label: "Morning Sessions", href: "agenda-section" },
+      { label: "Afternoon Sessions", href: "agenda-section" },
+      { label: "Awards Ceremony", href: "agenda-section" },
+    ],
     Pitch: [
-      { label: "Intrapreneurs", href: "pitches-section", scroll: true },
-      { label: "Entrepreneurs", href: "pitches-section", scroll: true },
-      { label: "K12 Students", href: "tests-section", scroll: true },
-      { label: "Higher Education Students", href: "tests-section", scroll: true },
-      { label: "Teachers", href: "tests-section", scroll: true },
-      { label: "K12 Schools", href: "tests-section", scroll: true },
+      { label: "Intrapreneurs", href: "pitches-section" },
+      { label: "Entrepreneurs", href: "pitches-section" },
+      { label: "K12 Students", href: "/tests", isPage: true },
+      { label: "Higher Education Students", href: "/tests", isPage: true },
+      { label: "Teachers", href: "/tests", isPage: true },
+      { label: "K12 Schools", href: "/tests", isPage: true },
     ],
     Explore: [
-      { label: "T-World K12", href: "#", external: true },
-      { label: "T-World", href: "#", external: true },
+      { label: "T-World K12 Website", href: "https://k12.t-world.tongston.com", external: true },
+      { label: "T-World Website", href: "https://t-world.tongston.com", external: true },
     ],
     "Past Editions": [
-      { label: "TEES 2022", href: "#", external: true },
-      { label: "TEES 2023", href: "#", external: true },
-      { label: "TEES 2024", href: "#", external: true },
+      { label: "TEES 2022", href: "gallery-section" },
+      { label: "TEES 2023", href: "gallery-section" },
+      { label: "TEES 2024", href: "gallery-section" },
     ],
+  }
+
+  const toggleMobileDropdown = (title) => {
+    setMobileDropdownOpen((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }))
   }
 
   return (
@@ -101,39 +124,40 @@ const Nav2 = () => {
       {({ open }) => (
         <>
           {/* Top Navigation Bar */}
-          <div className="mx-auto flex items-center justify-between h-20 px-4 lg:px-8">
+          <div className="mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
             <div className="flex items-center">
               <ScrollLink
-                to="hero-forms"
+                to="hero-section"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
                 className="flex items-center space-x-2 cursor-pointer"
               >
-                <Image src="/assets/images/tees-logo.png" alt="TES 2026 Logo" width={60} height={60} />
-                <span className="font-bold text-xl">TES 2026</span>
+                <Image
+                  src="/assets/images/tees-logo.png"
+                  alt="TES 2026 Logo"
+                  width={50}
+                  height={50}
+                  className="md:w-[60px] md:h-[60px]"
+                />
+                <span className="font-bold text-lg md:text-xl">TES 2026</span>
               </ScrollLink>
             </div>
 
-            <div className="hidden md:flex items-center space-x-8">
-              <Link
-                href="https://drive.google.com/file/d/1cKY5zian9COS3Dpz972IxTkvr1n4sPTz/view?usp=sharing"
-                target="_blank"
-                className={linkClass}
-              >
-                Agenda/Programme
-              </Link>
-              {desktopDropdown("Pitch", dropdowns.Pitch)}
-              {desktopDropdown("Explore", dropdowns.Explore)}
-              {desktopDropdown("Past Editions", dropdowns["Past Editions"])}
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <ScrollLink to="hero-section" spy={true} smooth={true} offset={-70} duration={500} className={linkClass}>
+                Home
+              </ScrollLink>
+              {Object.entries(dropdowns).map(([title, items]) => desktopDropdown(title, items))}
               <ScrollLink
                 to="registration-section"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className={`${linkClass} bg-yellow-600 text-black px-4 py-2 rounded-md hover:bg-red-600 hover:text-white font-bold`}
+                className="bg-gradient-to-r from-yellow-500 to-red-500 text-white px-4 py-2 rounded-md hover:from-yellow-600 hover:to-red-600 font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
               >
                 Register 2026
               </ScrollLink>
@@ -142,47 +166,48 @@ const Nav2 = () => {
               </Link>
             </div>
 
-            <div className="md:hidden">
-              <Disclosure.Button className="text-2xl">
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <Disclosure.Button className="text-2xl p-2">
                 <FontAwesomeIcon icon={open ? faTimes : faBars} />
               </Disclosure.Button>
             </div>
           </div>
 
           {/* Mobile Panel */}
-          <Disclosure.Panel className="md:hidden">
-            <div className="bg-white shadow-lg border-t">
+          <Disclosure.Panel className="lg:hidden">
+            <div className="bg-white shadow-lg border-t max-h-screen overflow-y-auto">
               <div className="px-4 py-6 space-y-4">
-                <Link
-                  href="https://drive.google.com/file/d/1cKY5zian9COS3Dpz972IxTkvr1n4sPTz/view?usp=sharing"
-                  target="_blank"
-                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200"
+                <ScrollLink
+                  to="hero-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200 cursor-pointer"
                 >
-                  Agenda/Programme
-                </Link>
+                  Home
+                </ScrollLink>
 
+                {/* Mobile CTA Button */}
                 <ScrollLink
                   to="registration-section"
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className="block bg-yellow-500 text-black font-bold py-3 px-4 rounded-lg text-center cursor-pointer hover:bg-red-600 hover:text-white transition-colors"
+                  className="block bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold py-3 px-4 rounded-lg text-center cursor-pointer hover:from-yellow-600 hover:to-red-600 transition-all duration-300 shadow-lg"
                 >
-                  Register for TES 2026
+                  🚀 Register for TES 2026
                 </ScrollLink>
 
+                {/* Mobile Dropdowns */}
                 {Object.entries(dropdowns).map(([title, items]) => {
                   const isOpen = mobileDropdownOpen[title]
                   return (
                     <div key={title}>
                       <button
-                        onClick={() =>
-                          setMobileDropdownOpen((prev) => ({
-                            ...prev,
-                            [title]: !prev[title],
-                          }))
-                        }
+                        onClick={() => toggleMobileDropdown(title)}
                         className="flex justify-between items-center w-full font-semibold text-gray-800 py-2 border-b border-gray-200"
                       >
                         {title}
@@ -193,31 +218,39 @@ const Nav2 = () => {
                       </button>
 
                       {isOpen && (
-                        <div className="pl-4 py-2 space-y-2">
-                          {items.map((item, index) =>
-                            item.scroll ? (
-                              <ScrollLink
-                                key={index}
-                                to={item.href}
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                                className="block text-gray-600 py-1 cursor-pointer hover:text-red-600"
-                              >
-                                {item.label}
-                              </ScrollLink>
-                            ) : (
-                              <Link
-                                key={index}
-                                href={item.href}
-                                target={item.external ? "_blank" : "_self"}
-                                className="block text-gray-600 py-1 hover:text-red-600"
-                              >
-                                {item.label}
-                              </Link>
-                            ),
-                          )}
+                        <div className="pl-4 py-2 space-y-2 bg-gray-50 rounded-md mt-2">
+                          {items.map((item, index) => (
+                            <div key={`${title}-mobile-${index}`}>
+                              {item.external ? (
+                                <Link
+                                  href={item.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                >
+                                  {item.label} ↗
+                                </Link>
+                              ) : item.isPage ? (
+                                <Link
+                                  href={item.href}
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                >
+                                  {item.label}
+                                </Link>
+                              ) : (
+                                <ScrollLink
+                                  to={item.href}
+                                  spy={true}
+                                  smooth={true}
+                                  offset={-70}
+                                  duration={500}
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                >
+                                  {item.label}
+                                </ScrollLink>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>
@@ -227,6 +260,15 @@ const Nav2 = () => {
                 <Link href="mailto:tees@tongston.com" className="block font-semibold text-gray-800 py-2">
                   Contact Us
                 </Link>
+
+                {/* Mobile Additional CTA */}
+                <div className="pt-4 border-t border-gray-200">
+                  <Link href="/tests" className="block w-full">
+                    <button className="w-full bg-red-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors shadow-md">
+                      🎓 Explore TESTS 2026
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </Disclosure.Panel>
