@@ -18,6 +18,19 @@ const nextConfig = {
     EMAILJS_USER_TEMPLATE_ID: process.env.EMAILJS_USER_TEMPLATE_ID,
     EMAILJS_ADMIN_TEMPLATE_ID: process.env.EMAILJS_ADMIN_TEMPLATE_ID,
   },
+   // Suppress extension-related warnings
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.devtool = 'cheap-module-source-map';
+    }
+    return config;
+  },
+  // Additional error handling
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+  
   };
   
   export default nextConfig;
