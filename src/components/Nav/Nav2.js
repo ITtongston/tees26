@@ -1,3 +1,109 @@
+"use client"
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { Disclosure } from "@headlessui/react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faTimes, faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import Image from "next/image"
+import { Link as ScrollLink } from "react-scroll"
+
+const Nav2 = () => {
+  const [scrolling, setScrolling] = useState(false)
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState({})
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null)
+
+  const linkClass = "hover:text-red-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer"
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const handleDesktopDropdownToggle = (title) => {
+    setDesktopDropdownOpen(desktopDropdownOpen === title ? null : title)
+  }
+
+  const closeAllDropdowns = () => {
+    setDesktopDropdownOpen(null)
+    setMobileDropdownOpen({})
+  }
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      closeAllDropdowns()
+    }
+    
+    document.addEventListener('click', handleClickOutside)
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
+
+  const CustomDesktopDropdown = ({ title, items }) => (
+    <div 
+      className="relative inline-block"
+      onClick={(e) => e.stopPropagation()} // Prevent event bubbling to document
+    >
+      <button
+        onClick={() => handleDesktopDropdownToggle(title)}
+        className={`${linkClass} cursor-pointer inline-flex items-center gap-1`}
+      >
+        {title}
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className={`transition-transform duration-300 ${
+            desktopDropdownOpen === title ? "rotate-180" : "rotate-0"
+          }`}
+        />
+      </button>
+
+      {desktopDropdownOpen === title && (
+        <div className="absolute z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="py-1">
+            {items.map((item, index) => (
+              <div key={`${title}-${index}`}>
+                {item.external ? (
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600"
+                    onClick={closeAllDropdowns}
+                  >
+                    {item.label}
+                  </Link>
+                ) : item.isPage ? (
+                  <Link
+                    href={item.href}
+                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600"
+                    onClick={closeAllDropdowns}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <ScrollLink
+                    to={item.href}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600 cursor-pointer"
+                    onClick={closeAllDropdowns}
+                  >
+                    {item.label}
+                  </ScrollLink>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
 "use client";
 
 import { useEffect, useState } from "react";
@@ -143,6 +249,26 @@ const Nav2 = () => {
       {({ open }) => (
         <>
           <div className="mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
+            <div className="flex items-center">
+              <ScrollLink
+                to="hero-section"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className="flex items-center space-x-2 cursor-pointer"
+                onClick={closeAllDropdowns}
+              >
+                <Image
+                  src="/assets/images/tees-logo.png"
+                  alt="TES 2026 Logo"
+                  width={50}
+                  height={50}
+                  className="md:w-[60px] md:h-[60px]"
+                />
+                <span className="font-bold text-lg md:text-xl">TES 2026</span>
+              </ScrollLink>
+            </div>
             <Link href={`/`}>
               <Image
                 src="/assets/images/tees-logo.png"
@@ -154,6 +280,22 @@ const Nav2 = () => {
             </Link>
 
             <div className="hidden lg:flex items-center space-x-6">
+              <ScrollLink 
+                to="hero-section" 
+                spy={true} 
+                smooth={true} 
+                offset={-70} 
+                duration={500} 
+                className={linkClass}
+                onClick={closeAllDropdowns}
+              >
+                Home
+              </ScrollLink>
+              
+              {Object.entries(dropdowns).map(([title, items]) => (
+                <CustomDesktopDropdown key={title} title={title} items={items} />
+              ))}
+              
               {Object.entries(dropdowns).map(([title, items]) => (
                 <ScrollDropdown
                   key={title}
@@ -173,6 +315,10 @@ const Nav2 = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                className="bg-gradient-to-r from-yellow-500 to-red-500 text-white px-4 py-2 rounded-md hover:from-yellow-600 hover:to-red-600 font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                onClick={closeAllDropdowns}
+              >
+                Register 2026
               >
                 <Button
                   text="Register"
@@ -181,6 +327,10 @@ const Nav2 = () => {
                   aos="delay-200"
                 />
               </ScrollLink>
+              
+              <Link href="mailto:tees@tongston.com" className={linkClass} onClick={closeAllDropdowns}>
+                Contact Us
+              </Link>
             </div>
 
             <div className="lg:hidden">
@@ -193,11 +343,41 @@ const Nav2 = () => {
           <Disclosure.Panel className="lg:hidden">
             <div className="bg-white shadow-lg border-t max-h-screen overflow-y-auto">
               <div className="px-4 py-6 space-y-4">
+                <ScrollLink
+                  to="hero-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200 cursor-pointer"
+                  onClick={closeAllDropdowns}
+                >
+                  Home
+                </ScrollLink>
+
+                {/* Mobile CTA Button */}
+                <ScrollLink
+                  to="registration-section"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="block bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold py-3 px-4 rounded-lg text-center cursor-pointer hover:from-yellow-600 hover:to-red-600 transition-all duration-300 shadow-lg"
+                  onClick={closeAllDropdowns}
+                >
+                  🚀 Register for TES 2026
+                </ScrollLink>
+
+                {/* Mobile Dropdowns */}
                 {Object.entries(dropdowns).map(([title, items]) => {
                   const isOpen = mobileDropdownOpen[title];
                   return (
                     <div key={title}>
                       <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          toggleMobileDropdown(title)
+                        }}
                         onClick={() =>
                           setMobileDropdownOpen((prev) => ({
                             ...prev,
@@ -225,6 +405,7 @@ const Nav2 = () => {
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  onClick={closeAllDropdowns}
                                 >
                                   {item.label} ↗
                                 </Link>
@@ -232,6 +413,7 @@ const Nav2 = () => {
                                 <Link
                                   href={item.href}
                                   className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  onClick={closeAllDropdowns}
                                 >
                                   {item.label}
                                 </Link>
@@ -243,6 +425,7 @@ const Nav2 = () => {
                                   offset={-70}
                                   duration={500}
                                   className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  onClick={closeAllDropdowns}
                                 >
                                   {item.label}
                                 </ScrollLink>
@@ -255,6 +438,11 @@ const Nav2 = () => {
                   );
                 })}
 
+                <Link 
+                  href="mailto:tees@tongston.com" 
+                  className="block font-semibold text-gray-800 py-2"
+                  onClick={closeAllDropdowns}
+                >
                 <Link
                   href="mailto:tees@tongston.com"
                   className="block font-semibold text-gray-800 py-2"
@@ -262,6 +450,12 @@ const Nav2 = () => {
                   Contact Us
                 </Link>
 
+                {/* Mobile Additional CTA */}
+                <div className="pt-4 border-t border-gray-200">
+                  <Link href="/tests" className="block w-full" onClick={closeAllDropdowns}>
+                    <button className="w-full bg-red-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors shadow-md">
+                      🎓 Explore TESTS 2026
+                    </button>
                 <div className="pt-4 border-t border-gray-200 flex flex-col gap-y-2 justify-start items-start">
                   <Link href="/tests" className="block w-full">
                     <Button
@@ -296,4 +490,5 @@ const Nav2 = () => {
   );
 };
 
+export default Nav2
 export default Nav2;
