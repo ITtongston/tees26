@@ -1,0 +1,157 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGraduationCap, faUsers, faGlobe, faCalendarAlt, faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import Button from "@/shared/Buttons"
+import Link from "next/link"
+
+const TestsHero = () => {
+  return (
+    <section id="tests-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-red-50">
+      {/* Animated Particles */}
+      <div className="absolute inset-0">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-br from-yellow-400 to-red-400 rounded-full"
+            animate={{
+              x: [0, Math.random() * 100 - 50, 0],
+              y: [0, Math.random() * 100 - 50, 0],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 5,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
+            {/* Main Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="space-y-6"
+            >
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-4 font-montserrat">
+                <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
+                  TESTS
+                </span>{" "}
+                2026
+              </h1>
+
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-montserrat">
+                Tongston Entrepreneurial Student, Teacher & School Summit
+              </h2>
+
+              <p className="text-xl md:text-2xl font-light text-gray-700 max-w-4xl mx-auto font-lato">
+                Africa's leading entrepreneurial education competition and showcase bringing together students,
+                teachers, and schools from across the continent
+              </p>
+            </motion.div>
+
+            {/* Event Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+                <FontAwesomeIcon icon={faCalendarAlt} />
+                <span>July 26, 2026</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+                <FontAwesomeIcon icon={faGlobe} />
+                <span>Virtual & Abuja</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+                <FontAwesomeIcon icon={faUsers} />
+                <span>K12 Schools, Students & Educators</span>
+              </div>
+            </motion.div>
+
+            {/* Key Features */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            >
+              {[
+                {
+                  icon: faGraduationCap,
+                  title: "Global Standards",
+                  description: "Aligned with international best practices"
+                },
+                {
+                  icon: faUsers,
+                  title: "Continental Reach",
+                  description: "Students from across Africa compete"
+                },
+                {
+                  icon: faGlobe,
+                  title: "Real Impact",
+                  description: "Transforming education into application"
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  whileHover={{ y: -10 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-200"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <FontAwesomeIcon icon={feature.icon} className="text-white text-2xl" />
+                  </div>
+                  <h3 className="text-2xl font-black text-black mb-4 font-montserrat">{feature.title}</h3>
+                  <p className="text-gray-600 font-lato">{feature.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
+              <Button
+                text="Register for TESTS 2026"
+                className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
+                icon={faChevronRight}
+              />
+              <Link href="/">
+                <Button
+                  text="Back to TES 2026"
+                  className="bg-white border-2 border-yellow-500 hover:bg-yellow-50 text-yellow-600 font-bold px-8 py-4 text-lg transition-colors shadow-md hover:shadow-lg"
+                />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default TestsHero
