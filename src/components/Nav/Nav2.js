@@ -114,12 +114,12 @@ const Nav2 = () => {
     ],
     Explore: [
       {
-        label: "T-World K12 Website",
+        label: "Tongston-World K-12 ",
         href: "https://k12.t-world.tongston.com",
         external: true,
       },
       {
-        label: "T-World Website",
+        label: "Tongston-World ",
         href: "https://t-world.tongston.com",
         external: true,
       },
