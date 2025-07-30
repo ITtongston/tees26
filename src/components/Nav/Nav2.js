@@ -180,17 +180,7 @@ const Nav2 = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
-              <ScrollLink 
-                to="hero-section" 
-                spy={true} 
-                smooth={true} 
-                offset={-70} 
-                duration={500} 
-                className={linkClass}
-                onClick={closeAllDropdowns}
-              >
-                Home
-              </ScrollLink>
+
               
               {Object.entries(dropdowns).map(([title, items]) => (
                 <CustomDesktopDropdown key={title} title={title} items={items} />
@@ -228,18 +218,7 @@ const Nav2 = () => {
           <Disclosure.Panel className="lg:hidden">
             <div className="bg-white shadow-lg border-t max-h-screen overflow-y-auto">
               <div className="px-4 py-6">
-                <ScrollLink
-                  to="hero-section"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200 cursor-pointer"
-                  onClick={closeAllDropdowns}
-                >
-                  Home
-                </ScrollLink>
-
+          
                 {/* Mobile Dropdowns */}
                 {Object.entries(dropdowns).map(([title, items]) => {
                   const isOpen = mobileDropdownOpen[title]
