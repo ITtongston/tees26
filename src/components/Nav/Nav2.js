@@ -3,9 +3,10 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Disclosure } from "@headlessui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faTimes, faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faTimes, faUser, faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import Image from "next/image"
 import { Link as ScrollLink } from "react-scroll"
+import Button from "@/shared/Buttons"
 
 const Nav2 = () => {
   const [scrolling, setScrolling] = useState(false)
@@ -46,7 +47,7 @@ const Nav2 = () => {
   const CustomDesktopDropdown = ({ title, items }) => (
     <div 
       className="relative inline-block"
-      onClick={(e) => e.stopPropagation()} // Prevent event bubbling to document
+      onClick={(e) => e.stopPropagation()}
     >
       <button
         onClick={() => handleDesktopDropdownToggle(title)}
@@ -132,10 +133,17 @@ const Nav2 = () => {
   }
 
   const toggleMobileDropdown = (title) => {
-    setMobileDropdownOpen((prev) => ({
-      ...prev,
-      [title]: !prev[title],
-    }))
+    setMobileDropdownOpen(prev => {
+      // Close all other dropdowns when opening a new one
+      const newState = Object.keys(prev).reduce((acc, key) => {
+        acc[key] = false
+        return acc
+      }, {})
+      
+      // Toggle the clicked dropdown
+      newState[title] = !prev[title]
+      return newState
+    })
   }
 
   return (
@@ -194,10 +202,13 @@ const Nav2 = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="bg-gradient-to-r from-yellow-500 to-red-500 text-white px-4 py-2 rounded-md hover:from-yellow-600 hover:to-red-600 font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                 onClick={closeAllDropdowns}
               >
-                Register 2026
+                <Button
+                  text="Register 2026"
+                  className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  iconClassName="ml-2"
+                />
               </ScrollLink>
               
               <Link href="mailto:tees@tongston.com" className={linkClass} onClick={closeAllDropdowns}>
@@ -216,7 +227,7 @@ const Nav2 = () => {
           {/* Mobile Panel */}
           <Disclosure.Panel className="lg:hidden">
             <div className="bg-white shadow-lg border-t max-h-screen overflow-y-auto">
-              <div className="px-4 py-6 space-y-4">
+              <div className="px-4 py-6">
                 <ScrollLink
                   to="hero-section"
                   spy={true}
@@ -227,19 +238,6 @@ const Nav2 = () => {
                   onClick={closeAllDropdowns}
                 >
                   Home
-                </ScrollLink>
-
-                {/* Mobile CTA Button */}
-                <ScrollLink
-                  to="registration-section"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="block bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold py-3 px-4 rounded-lg text-center cursor-pointer hover:from-yellow-600 hover:to-red-600 transition-all duration-300 shadow-lg"
-                  onClick={closeAllDropdowns}
-                >
-                  🚀 Register for TES 2026
                 </ScrollLink>
 
                 {/* Mobile Dropdowns */}
@@ -306,18 +304,36 @@ const Nav2 = () => {
 
                 <Link 
                   href="mailto:tees@tongston.com" 
-                  className="block font-semibold text-gray-800 py-2"
+                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200"
                   onClick={closeAllDropdowns}
                 >
                   Contact Us
                 </Link>
 
-                {/* Mobile Additional CTA */}
-                <div className="pt-4 border-t border-gray-200">
-                  <Link href="/tests" className="block w-full" onClick={closeAllDropdowns}>
-                    <button className="w-full bg-red-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors shadow-md">
-                      🎓 Explore TESTS 2026
-                    </button>
+                {/* Mobile Buttons - Positioned at bottom */}
+                <div className="mt-4 space-y-3">
+                  <ScrollLink
+                    to="registration-section"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    onClick={closeAllDropdowns}
+                    className="block w-1/2"
+                  >
+                    <Button
+                      text="Register for TES 2026"
+                      icon={faChevronRight}
+                      className="w-full bg-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg"
+                    />
+                  </ScrollLink>
+
+                  <Link href="/tests" className="block w-1/2" onClick={closeAllDropdowns}>
+                    <Button
+                      text="Explore TESTS 2026"
+                      icon={faChevronRight}
+                      className="w-full bg-yellow-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md"
+                    />
                   </Link>
                 </div>
               </div>
