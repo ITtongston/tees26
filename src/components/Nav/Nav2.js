@@ -1,54 +1,58 @@
-"use client"
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { Disclosure } from "@headlessui/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faTimes, faUser, faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons"
-import Image from "next/image"
-import { Link as ScrollLink } from "react-scroll"
-import Button from "@/shared/Buttons"
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Disclosure } from "@headlessui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faTimes,
+  faUser,
+  faChevronDown,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
+import Button from "@/shared/Buttons";
 
 const Nav2 = () => {
-  const [scrolling, setScrolling] = useState(false)
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState({})
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null)
+  const [scrolling, setScrolling] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState({});
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null);
 
-  const linkClass = "hover:text-red-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer"
+  const linkClass =
+    "hover:text-red-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer";
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolling(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleDesktopDropdownToggle = (title) => {
-    setDesktopDropdownOpen(desktopDropdownOpen === title ? null : title)
-  }
+    setDesktopDropdownOpen(desktopDropdownOpen === title ? null : title);
+  };
 
   const closeAllDropdowns = () => {
-    setDesktopDropdownOpen(null)
-    setMobileDropdownOpen({})
-  }
+    setDesktopDropdownOpen(null);
+    setMobileDropdownOpen({});
+  };
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
-      closeAllDropdowns()
-    }
-    
-    document.addEventListener('click', handleClickOutside)
+      closeAllDropdowns();
+    };
+
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const CustomDesktopDropdown = ({ title, items }) => (
-    <div 
-      className="relative inline-block"
-      onClick={(e) => e.stopPropagation()}
-    >
+    <div className="relative inline-block" onClick={(e) => e.stopPropagation()}>
       <button
         onClick={() => handleDesktopDropdownToggle(title)}
         className={`${linkClass} cursor-pointer inline-flex items-center gap-1`}
@@ -104,7 +108,7 @@ const Nav2 = () => {
         </div>
       )}
     </div>
-  )
+  );
 
   const dropdowns = {
     "Agenda / Programme": [
@@ -122,35 +126,45 @@ const Nav2 = () => {
       { label: "K12 Schools", href: "/tests", isPage: true },
     ],
     Explore: [
-      { label: "T-World K12 Website", href: "https://k12.t-world.tongston.com", external: true },
-      { label: "T-World Website", href: "https://t-world.tongston.com", external: true },
+      {
+        label: "T-World K12 Website",
+        href: "https://k12.t-world.tongston.com",
+        external: true,
+      },
+      {
+        label: "T-World Website",
+        href: "https://t-world.tongston.com",
+        external: true,
+      },
     ],
     "Past Editions": [
       { label: "TEES 2022", href: "gallery-section" },
       { label: "TEES 2023", href: "gallery-section" },
       { label: "TEES 2024", href: "gallery-section" },
     ],
-  }
+  };
 
   const toggleMobileDropdown = (title) => {
-    setMobileDropdownOpen(prev => {
+    setMobileDropdownOpen((prev) => {
       // Close all other dropdowns when opening a new one
       const newState = Object.keys(prev).reduce((acc, key) => {
-        acc[key] = false
-        return acc
-      }, {})
-      
+        acc[key] = false;
+        return acc;
+      }, {});
+
       // Toggle the clicked dropdown
-      newState[title] = !prev[title]
-      return newState
-    })
-  }
+      newState[title] = !prev[title];
+      return newState;
+    });
+  };
 
   return (
     <Disclosure
       as="nav"
       className={`fixed top-0 left-0 right-0 z-50 transition duration-300 ease-in-out ${
-        scrolling ? "bg-white/95 backdrop-blur-md text-gray-800 shadow-lg" : "bg-transparent text-white"
+        scrolling
+          ? "bg-white/95 backdrop-blur-md text-gray-800 shadow-lg"
+          : "bg-transparent text-white"
       }`}
     >
       {({ open }) => (
@@ -180,12 +194,21 @@ const Nav2 = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
-
-              
               {Object.entries(dropdowns).map(([title, items]) => (
-                <CustomDesktopDropdown key={title} title={title} items={items} />
+                <CustomDesktopDropdown
+                  key={title}
+                  title={title}
+                  items={items}
+                />
               ))}
-              
+
+              <Link
+                href="mailto:tees@tongston.com"
+                className={linkClass}
+                onClick={closeAllDropdowns}
+              >
+                Contact Us
+              </Link>
               <ScrollLink
                 to="registration-section"
                 spy={true}
@@ -195,15 +218,11 @@ const Nav2 = () => {
                 onClick={closeAllDropdowns}
               >
                 <Button
-                  text="Register 2026"
-                  className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  text="Register "
+                  className=" bg-red-500 hover:bg-yellow-600  bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                   iconClassName="ml-2"
                 />
               </ScrollLink>
-              
-              <Link href="mailto:tees@tongston.com" className={linkClass} onClick={closeAllDropdowns}>
-                Contact Us
-              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -218,23 +237,24 @@ const Nav2 = () => {
           <Disclosure.Panel className="lg:hidden">
             <div className="bg-white shadow-lg border-t max-h-screen overflow-y-auto">
               <div className="px-4 py-6">
-          
                 {/* Mobile Dropdowns */}
                 {Object.entries(dropdowns).map(([title, items]) => {
-                  const isOpen = mobileDropdownOpen[title]
+                  const isOpen = mobileDropdownOpen[title];
                   return (
                     <div key={title}>
                       <button
                         onClick={(e) => {
-                          e.stopPropagation()
-                          toggleMobileDropdown(title)
+                          e.stopPropagation();
+                          toggleMobileDropdown(title);
                         }}
                         className="flex justify-between items-center w-full font-semibold text-gray-800 py-2 border-b border-gray-200"
                       >
                         {title}
                         <FontAwesomeIcon
                           icon={faChevronDown}
-                          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                          className={`transition-transform duration-300 ${
+                            isOpen ? "rotate-180" : "rotate-0"
+                          }`}
                         />
                       </button>
 
@@ -278,11 +298,11 @@ const Nav2 = () => {
                         </div>
                       )}
                     </div>
-                  )
+                  );
                 })}
 
-                <Link 
-                  href="mailto:tees@tongston.com" 
+                <Link
+                  href="mailto:tees@tongston.com"
                   className="block font-semibold text-gray-800 py-2 border-b border-gray-200"
                   onClick={closeAllDropdowns}
                 >
@@ -307,7 +327,11 @@ const Nav2 = () => {
                     />
                   </ScrollLink>
 
-                  <Link href="/tests" className="block w-1/2" onClick={closeAllDropdowns}>
+                  <Link
+                    href="/tests"
+                    className="block w-1/2"
+                    onClick={closeAllDropdowns}
+                  >
                     <Button
                       text="Explore TESTS 2026"
                       icon={faChevronRight}
@@ -321,7 +345,7 @@ const Nav2 = () => {
         </>
       )}
     </Disclosure>
-  )
-}
+  );
+};
 
-export default Nav2
+export default Nav2;

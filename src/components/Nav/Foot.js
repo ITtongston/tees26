@@ -1,34 +1,39 @@
-"use client"
+"use client";
 
-import Button from "@/shared/Buttons"
-import { useState, useEffect } from "react"
-import Modal from "../Home/Form/Modal"
-import Link from "next/link"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedin, faXTwitter, faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons"
-import { faMapMarker } from "@fortawesome/free-solid-svg-icons"
-import { Link as ScrollLink } from "react-scroll"
+import Button from "@/shared/Buttons";
+import { useState, useEffect } from "react";
+import Modal from "../Home/Form/Modal";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faXTwitter,
+  faInstagram,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
+import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { Link as ScrollLink } from "react-scroll";
 
 function Foot() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
   const toggleOpen = () => {
-    setVisible(true)
-  }
+    setVisible(true);
+  };
 
   const toggleClose = () => {
-    setVisible(false)
-  }
+    setVisible(false);
+  };
 
   useEffect(() => {
     if (visible) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [visible])
+      document.body.style.overflow = "auto";
+    };
+  }, [visible]);
 
   const socials = [
     {
@@ -51,22 +56,40 @@ function Foot() {
       icon: faFacebook,
       url: "https://www.facebook.com/your-facebook-profile-url-here/",
     },
-  ]
+  ];
 
   const navigationLinks = [
     { id: "home", name: "Home", to: "https://tongston.com", external: true },
-    { id: "about", name: "About", to: "https://tongston.com/about", external: true },
-    { id: "hub", name: "Tongston Hub", to: "https://t-hub.tongston.com", external: true },
-    { id: "ventures", name: "T-Ventures", to: "https://t-ventures.tongston.com", external: true },
-  ]
+    {
+      id: "about",
+      name: "About",
+      to: "https://tongston.com/about",
+      external: true,
+    },
+    {
+      id: "hub",
+      name: "Tongston Hub",
+      to: "https://t-hub.tongston.com",
+      external: true,
+    },
+    {
+      id: "ventures",
+      name: "T-Ventures",
+      to: "https://t-ventures.tongston.com",
+      external: true,
+    },
+  ];
 
   return (
     <div className="w-full h-[fixed] bg-stone-700 bg-opacity-20 flex flex-col gap-y-8 justify-center items-start p-2">
       <section className="container-1 w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center p-1">
-        <h4 className="text-xl font-black text-gray-800 font-ger text-center md:text-3xl">Want More Information?</h4>
+        <h4 className="text-xl font-black text-gray-800 font-ger text-center md:text-3xl">
+          Want More Information?
+        </h4>
         <p className="text-base font-medium text-gray-800 font-sans text-center md:text-base px-3 lg:w-[60%]">
-          Connect with us to explore more about the TEES event. We&apos;re here to provide you with all the details you
-          need to be part of this transformative experience.
+          Connect with us to explore more about the TEES event. We&apos;re here
+          to provide you with all the details you need to be part of this
+          transformative experience.
         </p>
         <ScrollLink
           activeClass="active"
@@ -75,11 +98,15 @@ function Foot() {
           smooth={true}
           offset={-70}
           duration={500}
-          className="hidden md:block cursor-pointer"
+          className="hidden md:block cursor-pointer bg-yellow-500 hover:bg-red-600 "
         >
           <Button text="Get In Touch" />
         </ScrollLink>
-        <Button onClick={() => toggleOpen()} text="Get In Touch" className="md:hidden block" />
+        <Button
+          onClick={() => toggleOpen()}
+          text="Get In Touch"
+          className="md:hidden block bg-yellow-600 hover:bg-red-500 "
+        />
         {visible && <Modal onClose={() => toggleClose()} />}
       </section>
       <hr className="w-full border border-gray-500 mx-auto lg:w-[90%]"></hr>
@@ -134,7 +161,7 @@ function Foot() {
         </h4>
       </section>
     </div>
-  )
+  );
 }
 
-export default Foot
+export default Foot;
