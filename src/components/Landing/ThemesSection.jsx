@@ -1,179 +1,208 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGraduationCap,
   faBuilding,
-  faBroadcastTower,
+  faGlobe,
   faChartLine,
   faUsers,
   faTrophy,
   faLightbulb,
-  faGlobe,
-} from "@fortawesome/free-solid-svg-icons"
+  faHandshake,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ThemesSection = () => {
   const themes = [
     {
       icon: faGraduationCap,
       title: "EDUCATION",
-      description: "Transforming learning through entrepreneurial thinking",
-      features: ["K-12 Innovation", "Higher Ed Programs", "Teacher Training"],
+      biz_description:
+        "The first & only integrated tech-enabled entrepreneurial education curriculum in Africa",
+      features: [
+        "Fully integrated tech-enabled K-12 schooling solution",
+        "Entrepreneurial curriculum & assessments",
+        "Educator training & development",
+      ],
     },
     {
       icon: faBuilding,
       title: "ENTERPRISE",
-      description: "Building sustainable and profitable businesses",
-      features: ["Startup Support", "Corporate Innovation", "SME Growth"],
+      biz_description:
+        "The first & only integrated tech-enabled multimedia production firm in Africa",
+      features: [
+        "Multimedia production & branding",
+        "Marketing & communication solutions",
+        "Events management services",
+      ],
     },
     {
-      icon: faBroadcastTower,
-      title: "MEDIA",
-      description: "Amplifying voices and stories that matter",
-      features: ["Digital Content", "Brand Storytelling", "Media Tech"],
+      icon: faGlobe,
+      title: "ECOSYSTEM",
+      biz_description:
+        "The first & only digital global entrepreneurial ecosystem provider",
+      features: [
+        "Global entrepreneurial network",
+        "Institutional & government solutions",
+        "Digital ecosystem platform",
+      ],
     },
     {
       icon: faChartLine,
       title: "FINANCE",
-      description: "Enabling financial inclusion and growth",
-      features: ["Investment Access", "Fintech Solutions", "Financial Literacy"],
+      biz_description:
+        "The first & only full-service AI-driven investment solutions provider in Africa",
+      features: [
+        "AI-driven investment solutions",
+        "Advisory services",
+        "Grant management",
+      ],
     },
-  ]
+  ];
 
   const benefits = [
     {
       icon: faUsers,
-      title: "Network with 3000+ delegates",
-      subtitle: "from 61 countries across all themes",
+      title: "Network with 3000+ Delegates",
+      biz_description:
+        "Connect with delegates from 61 countries across media, education, finance & enterprise themes",
     },
     {
       icon: faTrophy,
-      title: "Win Capital & Prizes",
-      subtitle: "from Tongston Ventures",
+      title: "Pitch & Win",
+      biz_description:
+        "Pitch, be showcased & win capital, enterprise, media & education prizes from Tongston Ventures",
     },
     {
       icon: faLightbulb,
       title: "Access Industry Insights",
-      subtitle: "from global experts",
+      biz_description:
+        "Gain insights from global experts across media, education, finance & enterprise themes",
+    },
+    {
+      icon: faHandshake,
+      title: "Explore Global Services",
+      biz_description:
+        "Services for institutions, people & governments to become Valuable, Influential & Profitable",
     },
     {
       icon: faGlobe,
-      title: "Explore Global Services",
-      subtitle: "to become VIP - Valuable, Influential & Profitable",
+      title: "Access Investment Opportunities",
+      biz_description:
+        "Investment opportunities across all sectors attaining the 17 SDGs across the continent",
     },
-  ]
+  ];
 
   return (
-    <section id="themes-section" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="themes-section" className="py-12 md:py-20 bg-white w-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-black mb-6 font-montserrat">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 font-montserrat px-2">
             1 World. 1 Virtual Stage.
             <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
               {" "}
               4 Themes
             </span>
           </h2>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {["EDUCATION", "ENTERPRISE", "MEDIA", "FINANCE"].map((theme, index) => (
-              <motion.span
-                key={theme}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold rounded-full text-lg shadow-lg"
-              >
-                {theme}
-              </motion.span>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="space-y-4"
-          >
-            <p className="text-xl md:text-2xl font-bold text-black bg-yellow-100 border-l-4 border-yellow-500 inline-block px-6 py-3 rounded">
-              The only hybrid & global summit On Value Influence & Profitability
-            </p>
-            <p className="text-xl md:text-2xl font-bold text-white bg-gradient-to-r from-yellow-500 to-red-500 inline-block px-6 py-3 rounded shadow-lg">
-              26 July 2026 | Virtual & Abuja
-            </p>
-          </motion.div>
+          <p className="text-base sm:text-lg md:text-xl font-bold text-black bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 sm:px-6 sm:py-3 ">
+            The only hybrid & global summit on Value, Influence & Profitability
+          </p>
         </motion.div>
 
         {/* Themes Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 md:mb-16">
           {themes.map((theme, index) => (
             <motion.div
-              key={theme.title}
+              key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group"
+              whileHover={{ y: -10 }}
+              className="relative h-full min-h-[280px] sm:min-h-[320px] rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative p-8 rounded-2xl bg-white border-2 border-gray-200 hover:border-yellow-300 shadow-lg hover:shadow-xl transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-red-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <FontAwesomeIcon icon={theme.icon} className="text-2xl text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-black mb-4 font-montserrat text-black">{theme.title}</h3>
-                  <p className="text-gray-700 mb-6 font-lato">{theme.description}</p>
-
-                  <ul className="space-y-2">
-                    {theme.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+              {/* Main Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-yellow-50 to-red-50 z-10 group-hover:opacity-0 transition-opacity duration-300">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center mb-3 sm:mb-4 shadow-md">
+                  <FontAwesomeIcon 
+                    icon={theme.icon} 
+                    className="text-xl sm:text-2xl text-white" 
+                  />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-black mb-2 font-montserrat text-black">
+                  {theme.title}
+                </h3>
+                <p className="text-gray-700 font-lato text-xs sm:text-sm">
+                  {theme.biz_description}
+                </p>
+              </div>
+
+              {/* Features Overlay */}
+              <div className="absolute inset-0 bg-black/80 p-4 sm:p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                <ul className="space-y-2 sm:space-y-3">
+                  {theme.features.map((feature, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ x: -20, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 + idx * 0.1 }}
+                      className="flex items-start text-white text-xs sm:text-sm font-medium"
+                    >
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2 sm:mr-3 mt-1 sm:mt-1.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Benefits Section */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
-              key={benefit.title}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-200"
+              whileHover={{ y: -10 }}
+              className="relative h-full min-h-[180px] sm:min-h-[200px] rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <FontAwesomeIcon icon={benefit.icon} className="text-white text-xl" />
+              {/* Main Content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 text-center bg-gradient-to-br from-yellow-50 to-red-50 z-10 group-hover:opacity-0 transition-opacity duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 shadow-md">
+                  <FontAwesomeIcon 
+                    icon={benefit.icon} 
+                    className="text-lg sm:text-xl text-white" 
+                  />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 font-montserrat">
+                  {benefit.title}
+                </h4>
               </div>
 
-              <h4 className="text-lg font-bold text-black mb-2 font-montserrat">{benefit.title}</h4>
-              <p className="text-gray-600 font-lato">{benefit.subtitle}</p>
+              {/* Description Overlay */}
+              <div className="absolute inset-0 bg-black/80 p-3 sm:p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                <p className="text-white text-xs sm:text-sm font-lato text-center font-medium px-2">
+                  {benefit.biz_description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ThemesSection
+export default ThemesSection;
