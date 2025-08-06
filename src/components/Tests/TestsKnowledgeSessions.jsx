@@ -37,7 +37,7 @@ const TestsKnowledgeSessions = () => {
       ],
     },
     {
-      year: "2024",
+      year: "2026",
       topics: [
         { icon: faChartLine, title: "Finance Panel", subtitle: "Sustainable Finance in a Digital Age 🌱💰" },
         { icon: faGraduationCap, title: "Education Panel", subtitle: "Tech-Enabled Learning for Global Challenges" },
