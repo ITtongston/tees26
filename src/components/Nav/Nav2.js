@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
@@ -112,10 +113,10 @@ const Nav2 = () => {
 
   const dropdowns = {
     "Agenda / Programme": [
-      { label: "TES 2026 Full Agenda", href: "agenda-section" },
-      { label: "Morning Sessions", href: "agenda-section" },
-      { label: "Afternoon Sessions", href: "agenda-section" },
-      { label: "Awards Ceremony", href: "agenda-section" },
+      { label: "TES 2026 Full Agenda", href: "/tests#agenda-section" },
+      { label: "Morning Sessions", href: "/tests#morning-sessions" },
+      { label: "Afternoon Sessions", href: "/tests#afternoon-sessions" },
+      { label: "Awards Ceremony", href: "/tests#awards-ceremony" },
     ],
     Pitch: [
       { label: "Intrapreneurs", href: "pitches-section" },
@@ -127,12 +128,12 @@ const Nav2 = () => {
     ],
     Explore: [
       {
-        label: "T-World K12 Website",
+        label: "T-World K12",
         href: "https://k12.t-world.tongston.com",
         external: true,
       },
       {
-        label: "T-World Website",
+        label: "T-World",
         href: "https://t-world.tongston.com",
         external: true,
       },
@@ -171,7 +172,9 @@ const Nav2 = () => {
         <>
           {/* Top Navigation Bar */}
           <div className="mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
-            <div className="flex items-center">
+            <Link
+              href="/"
+             className="flex items-center">
               <ScrollLink
                 to="hero-section"
                 spy={true}
@@ -180,7 +183,7 @@ const Nav2 = () => {
                 duration={500}
                 className="flex items-center space-x-2 cursor-pointer"
                 onClick={closeAllDropdowns}
-              >
+              > 
                 <Image
                   src="/assets/images/tees-logo.png"
                   alt="TES 2026 Logo"
@@ -188,9 +191,9 @@ const Nav2 = () => {
                   height={50}
                   className="md:w-[60px] md:h-[60px]"
                 />
-                <span className="font-bold text-lg md:text-xl">TES 2026</span>
+                {/* <span className="font-bold text-lg md:text-xl">TES 2026</span> */}
               </ScrollLink>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">

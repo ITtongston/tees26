@@ -19,7 +19,7 @@ const ThemesSection = () => {
       icon: faGraduationCap,
       title: "EDUCATION",
       biz_description:
-        "The first & only integrated tech-enabled entrepreneurial education curriculum in Africa",
+        "The first & only integrated techenabled entrepreneurial education curriculum, assessments, resource & educator training & development centre in Africa",
       features: [
         "Fully integrated tech-enabled K-12 schooling solution",
         "Entrepreneurial curriculum & assessments",
@@ -39,9 +39,9 @@ const ThemesSection = () => {
     },
     {
       icon: faGlobe,
-      title: "ECOSYSTEM",
+      title: "MEDIA",
       biz_description:
-        "The first & only digital global entrepreneurial ecosystem provider",
+        "The first & only integrated tech-enabled multimedia production, branding, marketing, events mgt & communication firm in Africa",
       features: [
         "Global entrepreneurial network",
         "Institutional & government solutions",
@@ -52,7 +52,7 @@ const ThemesSection = () => {
       icon: faChartLine,
       title: "FINANCE",
       biz_description:
-        "The first & only full-service AI-driven investment solutions provider in Africa",
+        "The first & only full-service AIdriven investment, advisory & grant management solutions provider in Africa",
       features: [
         "AI-driven investment solutions",
         "Advisory services",
@@ -105,7 +105,7 @@ const ThemesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 font-montserrat px-2">
+          <h2 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl font-black text-black mb-6 font-montserrat px-2">
             1 World. 1 Virtual Stage.
             <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
               {" "}
