@@ -6,6 +6,16 @@ import { faGraduationCap, faUsers, faGlobe, faCalendarAlt, faChevronRight } from
 import Button from "@/shared/Buttons"
 import Link from "next/link"
 
+import WhyParticipate from "./WhyParticipate"
+const benefits = [
+  "Compete nationally & continentally",
+  "Win cash, scholarships, tools, & global exposure",
+  "Get featured in the Entrepreneurial Education Magazine (TEEM)",
+  "Access local & international opportunities",
+  "Join a growing movement transforming African education",
+]
+
+
 const TestsHero = () => {
   return (
     <section id="tests-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-red-50">
@@ -87,6 +97,9 @@ const TestsHero = () => {
                 <span>K12 Schools, Students & Educators</span>
               </div>
             </motion.div>
+
+            {/* Why Participate Section */}
+            <WhyParticipate benefits={benefits} />
 
             {/* Key Features */}
             <motion.div

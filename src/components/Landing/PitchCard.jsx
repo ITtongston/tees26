@@ -6,14 +6,14 @@ const PitchCard = ({
   title,
   subtitle,
   description,
-  link,
+  link = null,
   buttonText,
   buttonClassName,
   buttonIcon,
   borderColor,
   highlightColor,
   isEntrepreneurial,
-  onLearnMoreClick,
+  onLearnMoreClick = () => {},
 }) => (
   <motion.div
     initial={{ opacity: 0, x: isEntrepreneurial ? -50 : 50 }}
@@ -42,10 +42,5 @@ const PitchCard = ({
     )}
   </motion.div>
 );
-
-PitchCard.defaultProps = {
-  link: null,
-  onLearnMoreClick: () => {},
-};
 
 export default PitchCard;
