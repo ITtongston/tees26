@@ -174,25 +174,17 @@ const Nav2 = () => {
           <div className="mx-auto flex items-center justify-between h-16 md:h-20 px-4 lg:px-8">
             <Link
               href="/"
-             className="flex items-center">
-              <ScrollLink
-                to="hero-section"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                className="flex items-center space-x-2 cursor-pointer"
-                onClick={closeAllDropdowns}
-              > 
-                <Image
-                  src="/assets/images/tees-logo.png"
-                  alt="TES 2026 Logo"
-                  width={50}
-                  height={50}
-                  className="md:w-[60px] md:h-[60px]"
-                />
-                {/* <span className="font-bold text-lg md:text-xl">TES 2026</span> */}
-              </ScrollLink>
+              className="flex items-center"
+              onClick={closeAllDropdowns}
+            >
+              <Image
+                src="/assets/images/tees-logo.png"
+                alt="TES 2026 Logo"
+                width={50}
+                height={50}
+                className="md:w-[60px] md:h-[60px]"
+              />
+              {/* <span className="font-bold text-lg md:text-xl">TES 2026</span> */}
             </Link>
 
             {/* Desktop Navigation */}

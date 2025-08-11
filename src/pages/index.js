@@ -16,8 +16,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PitchesSection from "@/components/Landing/PitchesSection";
 
-
-
 export default function index() {
   return (
     <ErrorBoundary>
@@ -30,7 +28,7 @@ export default function index() {
 
         <Element name="pitches-section" className="element"></Element>
         <PitchesSection />
-      
+
         <Element name="tests-section" className="element"></Element>
         <TestsSection />
 
@@ -46,7 +44,6 @@ export default function index() {
 
         {/* <Youtube /> */}
         {/* <Carousel /> */}
-
 
         <Element name="registration-section" className="element"></Element>
         {/* <RegistrationSection /> */}

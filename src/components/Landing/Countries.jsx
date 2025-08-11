@@ -4,19 +4,22 @@ import Image from "next/image";
 
 function Countries() {
   const africanCountries = [
-  
-    { name: "Nigeria", flag:  "/assets/images/portfolios/Nigeria.png", },
+    { name: "Nigeria", flag: "/assets/images/portfolios/Nigeria.png" },
     { name: "Kenya", flag: "/assets/images/portfolios/kenya.png" },
     { name: "South Africa", flag: "/assets/images/portfolios/southafrica.png" },
     { name: "Ghana", flag: "/assets/images/portfolios/ghana.png" },
     { name: "Mauritius", flag: "/assets/images/portfolios/mauritius.png" },
-   
 
-
+    // making the marque longer
+    { name: "Nigeria", flag: "/assets/images/portfolios/Nigeria.png" },
+    { name: "Kenya", flag: "/assets/images/portfolios/kenya.png" },
+    { name: "South Africa", flag: "/assets/images/portfolios/southafrica.png" },
+    { name: "Ghana", flag: "/assets/images/portfolios/ghana.png" },
+    { name: "Mauritius", flag: "/assets/images/portfolios/mauritius.png" },
   ];
 
   return (
-    <div className="w-full flex flex-col justify-center items-start gap-y-8 mt-9 mb-[5rem]">
+    <div className="w-[90%] flex flex-col justify-center items-start gap-y-8 mt-9 mb-[5rem]  mx-auto ">
       <section className="carousel-section w-full mt-9">
         <Marquee
           speed={30}

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import { Element } from "react-scroll";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
   faBuilding,
@@ -11,10 +11,10 @@ import {
   faGraduationCap,
   faUsers,
   faLightbulb,
-} from "@fortawesome/free-solid-svg-icons"
-import RegistrationSection from "../Home/RegistrationSection"
-import TongstonProducts from "./TongstonProducts"
-import AgendaSection from "./AgendaSection"
+} from "@fortawesome/free-solid-svg-icons";
+import RegistrationSection from "../Home/RegistrationSection";
+import TongstonProducts from "./TongstonProducts";
+import AgendaSection from "./AgendaSection";
 
 // Topic Item Component
 const TopicItem = ({ topic, index }) => (
@@ -36,7 +36,7 @@ const TopicItem = ({ topic, index }) => (
       </div>
     </div>
   </motion.div>
-)
+);
 
 // Session Year Component
 const SessionYear = ({ session, sessionIndex }) => (
@@ -58,46 +58,95 @@ const SessionYear = ({ session, sessionIndex }) => (
       ))}
     </div>
   </motion.div>
-)
+);
 
 // Feature Item Component
 const FeatureItem = ({ icon, title, description, gradient }) => (
   <div className="text-center">
-    <div className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+    <div
+      className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}
+    >
       <FontAwesomeIcon icon={icon} className="text-2xl text-white" />
     </div>
     <h5 className="text-lg font-bold mb-2 text-black">{title}</h5>
     <p className="text-gray-600 text-sm">{description}</p>
   </div>
-)
+);
 
 // Data
 const sessions = [
   {
     year: "2023",
     topics: [
-      { icon: faChartLine, title: "Finance Panel", subtitle: "Sustainability + Finance — the new power pair in town!" },
-      { icon: faBuilding, title: "Enterprise Panel", subtitle: "Remote Work & Supply Chains — Opportunity or Threat?" },
-      { icon: faBroadcastTower, title: "Media Panel", subtitle: "The Rise of the Content Creator Economy." },
-      { icon: faGraduationCap, title: "Education Panel", subtitle: "Is AI Going to Make Formal Schooling Redundant?" },
+      {
+        icon: faChartLine,
+        title: "Finance Panel",
+        subtitle: "Sustainability + Finance — the new power pair in town!",
+      },
+      {
+        icon: faBuilding,
+        title: "Enterprise Panel",
+        subtitle: "Remote Work & Supply Chains — Opportunity or Threat?",
+      },
+      {
+        icon: faBroadcastTower,
+        title: "Media Panel",
+        subtitle: "The Rise of the Content Creator Economy.",
+      },
+      {
+        icon: faGraduationCap,
+        title: "Education Panel",
+        subtitle: "Is AI Going to Make Formal Schooling Redundant?",
+      },
     ],
   },
   {
     year: "2026",
     topics: [
-      { icon: faChartLine, title: "Finance Panel", subtitle: "Sustainable Finance in a Digital Age 🌱💰" },
-      { icon: faGraduationCap, title: "Education Panel", subtitle: "Tech-Enabled Learning for Global Challenges" },
-      { icon: faBuilding, title: "Enterprise Panel", subtitle: "Integrating Sustainability & Digital Innovation" },
-      { icon: faBroadcastTower, title: "Media Panel", subtitle: "Storytelling for Sustainability" },
+      {
+        icon: faChartLine,
+        title: "Finance Panel",
+        subtitle: "Sustainable Finance in a Digital Age 🌱💰",
+      },
+      {
+        icon: faGraduationCap,
+        title: "Education Panel",
+        subtitle: "Tech-Enabled Learning for Global Challenges",
+      },
+      {
+        icon: faBuilding,
+        title: "Enterprise Panel",
+        subtitle: "Integrating Sustainability & Digital Innovation",
+      },
+      {
+        icon: faBroadcastTower,
+        title: "Media Panel",
+        subtitle: "Storytelling for Sustainability",
+      },
     ],
   },
-]
+];
 
 const features = [
-  { icon: faLightbulb, title: "Industry Insights", description: "Learn from global experts across all themes", gradient: "from-yellow-500 to-red-500" },
-  { icon: faUsers, title: "Global Network", description: "Connect with leaders and delegates worldwide", gradient: "from-yellow-400 to-red-400" },
-  { icon: faPlay, title: "Interactive Sessions", description: "Engage in live Q&A and discussions", gradient: "from-yellow-500 to-red-500" },
-]
+  {
+    icon: faLightbulb,
+    title: "Industry Insights",
+    description: "Learn from global experts across all themes",
+    gradient: "from-yellow-500 to-red-500",
+  },
+  {
+    icon: faUsers,
+    title: "Global Network",
+    description: "Connect with leaders and delegates worldwide",
+    gradient: "from-yellow-400 to-red-400",
+  },
+  {
+    icon: faPlay,
+    title: "Interactive Sessions",
+    description: "Engage in live Q&A and discussions",
+    gradient: "from-yellow-500 to-red-500",
+  },
+];
 
 const TestsKnowledgeSessions = () => (
   <section className="py-12 bg-gradient-to-br from-yellow-50 to-red-50 relative overflow-hidden">
@@ -112,11 +161,13 @@ const TestsKnowledgeSessions = () => (
         <h2 className="text-3xl md:text-4xl font-black mb-4 font-montserrat text-black">
           TES 2026
           <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
-            {" "}Knowledge-Skills-Attitude Sessions
+            {" "}
+            Knowledge-Skills-Attitude Sessions
           </span>
         </h2>
         <p className="text-base md:text-lg text-gray-700 font-lato max-w-3xl mx-auto mb-6">
-          Sessions cover enterprise, media, finance, and education, focusing on technology, strategy, and sustainability.
+          Sessions cover enterprise, media, finance, and education, focusing on
+          technology, strategy, and sustainability.
         </p>
         <p className="text-base font-bold text-gray-800 bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 rounded">
           Learn industry trends from global experts and network with leaders.
@@ -130,16 +181,22 @@ const TestsKnowledgeSessions = () => (
         viewport={{ once: true }}
         className="mb-12"
       >
-        <h3 className="text-2xl font-bold text-center mb-8 text-red-600">Previous Sessions Topics</h3>
+        <h3 className="text-2xl font-bold text-center mb-8 text-red-600">
+          Previous Sessions Topics
+        </h3>
         <div className="space-y-12">
           {sessions.map((session, index) => (
-            <SessionYear key={session.year} session={session} sessionIndex={index} />
+            <SessionYear
+              key={session.year}
+              session={session}
+              sessionIndex={index}
+            />
           ))}
         </div>
       </motion.div>
 
       {/* CTA Section (Check out Highlights) */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -155,7 +212,7 @@ const TestsKnowledgeSessions = () => (
           allowFullScreen
           className="h-[300px] md:h-[400px] rounded-2xl shadow-xl"
         ></iframe>
-      </motion.div>
+      </motion.div> */}
 
       {/* Features Grid */}
       <motion.div
@@ -180,10 +237,8 @@ const TestsKnowledgeSessions = () => (
       <Element name="registration-section" className="element">
         <RegistrationSection className="full-width" />
       </Element>
-    
-
     </div>
   </section>
-)
+);
 
-export default TestsKnowledgeSessions
+export default TestsKnowledgeSessions;
