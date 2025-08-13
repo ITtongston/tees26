@@ -15,6 +15,8 @@ import {
 import RegistrationSection from "../Home/RegistrationSection";
 import TongstonProducts from "./TongstonProducts";
 import AgendaSection from "./AgendaSection";
+import Gallery from "@/components/Home/Gallery";
+import Statistics from "@/components/Home/Statistics";
 
 // Topic Item Component
 const TopicItem = ({ topic, index }) => (
@@ -232,7 +234,15 @@ const TestsKnowledgeSessions = () => (
       <Element name="agenda-section" className="element">
         <AgendaSection />
       </Element>
+        {/* Statistics Section */}
+      <Element name="statistics-section" className="element">
+        <Statistics />
+      </Element>
 
+      {/* Gallery Section */}
+      <Element name="gallery-section" className="element">
+        <Gallery />
+      </Element>
       {/* Registration Section */}
       <Element name="registration-section" className="element">
         <RegistrationSection className="full-width" />

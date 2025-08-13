@@ -6,13 +6,13 @@ function Gallery() {
   const pix = [
     { imager: "/assets/images/gallery/gal-1.jpg", title: <p>TEES 2022 </p> },
 
-    { imager: "/assets/images/gallery/gal-2.jpg", title: <p>TEES 2022 </p> },
+    // { imager: "/assets/images/gallery/gal-2.jpg", title: <p>TEES 2022 </p> },
 
     { imager: "/assets/images/gallery/gal-3.png", title: <p> TEES 2023</p> },
 
-    { imager: "/assets/images/gallery/gal-4.png", title: <p>TEES 2023 </p> },
+    // { imager: "/assets/images/gallery/gal-4.png", title: <p>TEES 2023 </p> },
 
-    { imager: "/assets/images/gallery/gal-5.png", title: <p>TEES 2023 </p> },
+    // { imager: "/assets/images/gallery/gal-5.png", title: <p>TEES 2023 </p> },
     {
       imager: "/assets/images/gallery/gal-6.jpg",
       title: <p> TEES 2022</p>,
@@ -48,7 +48,7 @@ function Gallery() {
                 src={image.imager}
                 alt={`tess-gallery ${image.title}`}
                 width={400}
-                height={400}
+                height={400}id
                 className="    md:h-[200px]   lg:h-[270px] w-full   "
               />
             </div>

@@ -39,11 +39,11 @@ export default function index() {
 
         {/* <RegistrationStats /> */}
 
-        {/* <Element name="gallery-section" className="element"></Element>
-        <Gallery /> */}
+         {/* <Element name="gallery-section" className="element"></Element>
+        <Gallery />  */}
 
         {/* <Youtube /> */}
-        {/* <Carousel /> */}
+        <Carousel />
 
         <Element name="registration-section" className="element"></Element>
         {/* <RegistrationSection /> */}

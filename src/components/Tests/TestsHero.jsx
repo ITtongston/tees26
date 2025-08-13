@@ -59,18 +59,18 @@ const TestsHero = () => {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-black mb-4 font-montserrat">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-4 font-montserrat">
                 <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
                   TESTS
                 </span>{" "}
                 2026
               </h1>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-montserrat">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-montserrat">
                 Tongston Entrepreneurial Student, Teacher & School Summit
               </h2>
 
-              <p className="text-xl md:text-2xl font-light text-gray-700 max-w-4xl mx-auto font-lato">
+              <p className="text-lg md:text-xl font-light text-gray-700 max-w-4xl mx-auto font-lato">
                 Africa's leading entrepreneurial education competition and showcase bringing together students,
                 teachers, and schools from across the continent
               </p>
@@ -84,15 +84,15 @@ const TestsHero = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
                 <FontAwesomeIcon icon={faCalendarAlt} />
                 <span>July 26, 2026</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
                 <FontAwesomeIcon icon={faGlobe} />
                 <span>Virtual & Abuja</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-red-600 font-bold shadow-lg">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
                 <FontAwesomeIcon icon={faUsers} />
                 <span>K12 Schools, Students & Educators</span>
               </div>
@@ -134,8 +134,8 @@ const TestsHero = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
                     <FontAwesomeIcon icon={feature.icon} className="text-white text-2xl" />
                   </div>
-                  <h3 className="text-2xl font-black text-black mb-4 font-montserrat">{feature.title}</h3>
-                  <p className="text-gray-600 font-lato">{feature.description}</p>
+                  <h3 className="text-xl font-black text-black mb-4 font-montserrat">{feature.title}</h3>
+                  <p className="text-base text-gray-600">{feature.description}</p>
                 </motion.div>
               ))}
             </motion.div>

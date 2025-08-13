@@ -113,10 +113,10 @@ const Nav2 = () => {
 
   const dropdowns = {
     "Agenda / Programme": [
-      { label: "TES 2026 Full Agenda", href: "/tests#agenda-section" },
-      { label: "Morning Sessions", href: "/tests#morning-sessions" },
-      { label: "Afternoon Sessions", href: "/tests#afternoon-sessions" },
-      { label: "Awards Ceremony", href: "/tests#awards-ceremony" },
+      { label: "TES 2026 Full Agenda", href: "/agenda-section" },
+      { label: "Morning Sessions", href: "/morning-sessions" },
+      { label: "Late Sessions", href: "/afternoon-sessions" },
+      { label: "Awards Ceremony", href: "/awards-ceremony" },
     ],
     Pitch: [
       { label: "Intrapreneurs", href: "pitches-section" },

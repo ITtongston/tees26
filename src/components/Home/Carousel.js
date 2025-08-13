@@ -37,7 +37,7 @@ function Carousel() {
     <div className="w-full h-[fixed] bg-white flex flex-col justify-center items-start  gap-y-8 mt-9 mb-[5rem] ">
       <section className="heading-section w-full h-[fixed] bg-opacity-80  justify-center items-center flex flex-col gap-y-8  ">
         <h1 className="text-xl font-bold text-yellow-600 lg:text-3xl lg:w-[60%] text-center font-ger">
-          Global Industry Leaders Representing Premier Brands at TEES
+          Global Industry Leaders From Premier Brands at TESTS
         </h1>
     
       </section>

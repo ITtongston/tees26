@@ -25,12 +25,12 @@ const FinalCTA = () => (
           icon={faRocket}
         />
       </Link>
-      <Link href="/tests">
+      {/* <Link href="/tests">
         <Button
           text="Learn About TESTS"
           className="bg-black hover:bg-gray-800 text-white font-bold px-8 py-3"
         />
-      </Link>
+      </Link> */}
     </div>
   </motion.div>
 );

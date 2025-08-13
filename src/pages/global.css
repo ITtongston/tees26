@@ -5,6 +5,8 @@
   --foreground-rgb: 255, 255, 255; /* White text */
   --background-start-rgb: 0, 0, 0; /* Black background */
   --background-end-rgb: 0, 0, 0; /* Black background */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
 }
 
 body {
@@ -68,6 +70,10 @@ body {
 }
 
 
+.dropdown-item {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
 
 /* .clip-bottom-edge {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%);

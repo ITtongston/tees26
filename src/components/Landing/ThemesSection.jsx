@@ -105,7 +105,7 @@ const ThemesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-2xl sm:text-4xl md:text-3xl lg:text-5xl font-black text-black mb-6 font-montserrat px-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-6 font-montserrat px-2">
             1 World. 1 Virtual Stage.
             <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
               {" "}
@@ -140,7 +140,7 @@ const ThemesSection = () => {
                 <h3 className="text-xl sm:text-2xl font-black mb-2 font-montserrat text-black">
                   {theme.title}
                 </h3>
-                <p className="text-gray-700 font-lato text-xs sm:text-sm">
+                <p className="text-sm sm:text-base font-lato text-gray-700">
                   {theme.biz_description}
                 </p>
               </div>
@@ -156,7 +156,7 @@ const ThemesSection = () => {
                       transition={{ delay: 0.1 + idx * 0.1 }}
                       className="flex items-start text-white text-xs sm:text-sm font-medium"
                     >
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2 sm:mr-3 mt-1 sm:mt-1.5 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2 sm:mr-3 mt-1 sm:mt-1.5 flex-shrink-0 text-xs sm:text-sm" />
                       <span>{feature}</span>
                     </motion.li>
                   ))}
@@ -186,14 +186,14 @@ const ThemesSection = () => {
                     className="text-lg sm:text-xl text-white" 
                   />
                 </div>
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 font-montserrat">
+                <h4 className="text-lg sm:text-xl font-bold text-black mb-1 font-montserrat">
                   {benefit.title}
                 </h4>
               </div>
 
               {/* Description Overlay */}
               <div className="absolute inset-0 bg-black/80 p-3 sm:p-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                <p className="text-white text-xs sm:text-sm font-lato text-center font-medium px-2">
+                <p className="text-sm sm:text-base font-lato text-center font-medium px-2">
                   {benefit.biz_description}
                 </p>
               </div>
