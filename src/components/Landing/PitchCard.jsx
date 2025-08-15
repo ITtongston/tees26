@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Button from "@/shared/Buttons";
+import { faBriefcase, faRocket } from "@fortawesome/free-solid-svg-icons";
 
 const PitchCard = ({
   title,
   subtitle,
   description,
   link = null,
-  buttonText,
-  buttonClassName,
-  buttonIcon,
+
   borderColor,
   highlightColor,
   isEntrepreneurial,
@@ -33,12 +32,19 @@ const PitchCard = ({
     <p className="text-lg mb-6 text-gray-700">{description}</p>
     {link ? (
       <Link href={link}>
-        <Button text={buttonText} className={buttonClassName} icon={buttonIcon} />
+        <Button
+          text={`Learn More`}
+          icon={faRocket}
+          className="bg-yellow-600 "
+        />
       </Link>
     ) : (
-      <button onClick={onLearnMoreClick} className={buttonClassName}>
-        <Button text={buttonText} icon={buttonIcon} />
-      </button>
+      <Button
+        text={`Learn More`}
+        icon={faBriefcase}
+        onClick={onLearnMoreClick}
+        className="bg-black"
+      />
     )}
   </motion.div>
 );

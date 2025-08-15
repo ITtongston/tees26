@@ -83,10 +83,10 @@ function Foot() {
   return (
     <div className="w-full h-[fixed] bg-stone-700 bg-opacity-20 flex flex-col gap-y-8 justify-center items-start p-2">
       <section className="container-1 w-full h-[fixed] flex flex-col gap-y-5 justify-center items-center p-1">
-        <h4 className="text-xl font-black text-gray-800 font-ger text-center md:text-3xl">
+        <h4 className="text-xl font-black text-gray-800 font-heading text-center md:text-3xl">
           Want More Information?
         </h4>
-        <p className="text-base font-medium text-gray-800 font-sans text-center md:text-base px-3 lg:w-[60%]">
+        <p className="text-base font-medium text-gray-800 font-body text-center md:text-base px-3 lg:w-[60%]">
           Connect with us to explore more about the TEES event. We&apos;re here
           to provide you with all the details you need to be part of this
           transformative experience.
@@ -100,7 +100,7 @@ function Foot() {
           duration={500}
           className="hidden md:block cursor-pointer bg-yellow-500 hover:bg-red-600 "
         >
-          <Button text="Get In Touch" />
+          <Button text="Get In Touch" className="bg-background-gold" />
         </ScrollLink>
         <Button
           onClick={() => toggleOpen()}
@@ -118,7 +118,7 @@ function Foot() {
             href={link.to}
             target={link.external ? "_blank" : "_self"}
             rel={link.external ? "noopener noreferrer" : undefined}
-            className="text-red-700 font-black text-center md:text-left hover:text-red-500 transition-colors"
+            className="text-background-footer_black  font-bold text-center md:text-left hover:text-red-500 transition-colors"
           >
             {link.name}
           </Link>
@@ -128,7 +128,7 @@ function Foot() {
             href="https://docs.google.com/document/d/1-5zrQ9tuhFNUPYcZAYtKajPf_8tX1bFo?rtpof=true&authuser=t-media%40tongston.com&usp=drive_fs"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-800 underline md:ml-auto font-black text-center md:text-left hover:text-gray-600 transition-colors"
+            className="text-background-footer_black underline md:ml-auto font-bold text-center md:text-left hover:text-gray-600 transition-colors"
           >
             Tongston Disclaimer Notice
           </Link>
@@ -146,7 +146,7 @@ function Foot() {
           >
             <FontAwesomeIcon
               icon={social.icon}
-              className="text-yellow-600 border border-red-500 rounded-full p-2 text-base hover:bg-red-500 hover:text-white transition-colors duration-300"
+              className="text-background-gold border border-red-500 rounded-full p-2 text-base hover:bg-background-danger  hover:text-white transition-colors duration-300"
             />
           </Link>
         ))}

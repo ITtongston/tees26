@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Aos from "aos"
-import "aos/dist/aos.css"
+import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Button = ({
   text = "Get Resume",
@@ -26,8 +26,8 @@ const Button = ({
       anchorPlacement: "top-bottom",
       once: true,
       oncePerElement: true,
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <button
@@ -42,9 +42,15 @@ const Button = ({
       {...props}
     >
       {text}
-      {icon && <FontAwesomeIcon icon={icon} className={`font-black text-white ${iconClassName}`} style={iconStyles} />}
+      {icon && (
+        <FontAwesomeIcon
+          icon={icon}
+          className={`font-black text-white ${iconClassName}`}
+          style={iconStyles}
+        />
+      )}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
