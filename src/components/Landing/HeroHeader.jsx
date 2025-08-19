@@ -8,11 +8,11 @@ const HeroHeader = () => (
     className="text-center mb-20"
   >
     <div className="mb-12">
-      <h1 className="text-5xl md:text-3xl lg:text-5xl font-black mb-6 text-black">
+      <h1 className="text-5xl md:text-3xl lg:text-5xl font-heading font-bold mb-6 text-black">
         TES 2026 PITCHES
       </h1>
       <div className="w-32 h-2 bg-red-600 mx-auto mb-8"></div>
-      <h2 className="text-2xl md:text-2xl font-bold text-red-600 mb-8">
+      <h2 className="text-2xl md:text-2xl font-heading font-medium text-black mb-8">
         Pitch Globally at TES 2026
       </h2>
     </div>

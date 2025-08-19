@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
-
 const portfolioCompanies = [
   {
     name: "MIJOLNIA",
@@ -68,10 +66,9 @@ const portfolioCompanies = [
   }
 ];
 
-
 export default function PortfolioSection() {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-background-light">
       <div className="container mx-auto px-4">
         {/* Title Section */}
         <motion.div
@@ -80,10 +77,10 @@ export default function PortfolioSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-800 sm:text-4xl md:text-5xl">
+          <h2 className="text-3xl font-heading font-bold text-gray-800 sm:text-4xl md:text-5xl">
             Our Portfolio Companies
           </h2>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto font-body font-normal">
             Discover the innovative companies we support, driving impact across various sectors in Africa.
           </p>
         </motion.div>
@@ -109,19 +106,19 @@ export default function PortfolioSection() {
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 </div>
-                <h3 className="text-gray-800 font-bold text-base sm:text-lg mt-2 text-center">{company.name}</h3>
+                <h3 className="text-gray-800 font-heading font-bold text-base sm:text-lg mt-2 text-center">{company.name}</h3>
               </div>
 
               {/* Hover Overlay (Back) */}
               <div className="absolute inset-0 bg-gray-800 bg-opacity-80 flex flex-col items-center justify-center p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="text-white text-xs sm:text-sm space-y-3 text-center">
-                  <p>
-                    <span className="font-semibold text-yellow-300">{company.name}:</span>{" "}
+                  <p className="font-body font-normal">
+                    <span className="font-heading font-medium text-yellow-300">{company.name}:</span>{" "}
                     {company.description}
                   </p>
                   {company.Impact && (
-                    <p>
-                      <span className="font-semibold text-yellow-300">Impact:</span>{" "}
+                    <p className="font-body font-normal">
+                      <span className="font-heading font-medium text-yellow-300">Impact:</span>{" "}
                       {company.Impact}
                     </p>
                   )}

@@ -23,53 +23,53 @@ const PitchFormatModal = ({ isOpen, onClose }) => (
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
-          className="bg-white rounded-xl shadow-lg p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+          className="bg-background-gold  rounded-xl shadow-lg p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          <h3 className="text-3xl font-bold mb-6 text-red-600 text-center">
+          <h3 className="text-3xl font-heading font-bold mb-6 text-white text-center">
             Pitch Your Intrapreneurial VIP
           </h3>
-          <h4 className="text-xl font-bold text-black mb-4 text-center">
+          <h4 className="text-xl font-heading font-bold text-black mb-4 text-center">
             Your 5-Minute VIP Story
           </h4>
-          <p className="text-lg text-gray-700 mb-6 text-center">
+          <p className="text-lg font-body font-normal text-white mb-6 text-center">
             Showcase your impact in 5 minutes. No slides—just presence, proof, and power.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <div className="bg-white p-6 rounded-xl border-2 border-yellow-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
               <FontAwesomeIcon icon={faBriefcase} className="text-yellow-500 text-2xl mb-4" />
-              <h5 className="font-bold mb-2 text-black">DEMONSTRATE VALUE</h5>
-              <p className="text-gray-600">To your organization, team, or community</p>
+              <h5 className="font-heading font-bold mb-2 text-black">DEMONSTRATE VALUE</h5>
+              <p className="text-gray-600 font-body font-normal">To your organization, team, or community</p>
             </div>
             <div className="bg-white p-6 rounded-xl border-2 border-red-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
               <FontAwesomeIcon icon={faUsers} className="text-red-500 text-2xl mb-4" />
-              <h5 className="font-bold mb-2 text-black">PROVE INFLUENCE</h5>
-              <p className="text-gray-600">Through ideas implemented and systems shaped</p>
+              <h5 className="font-heading font-bold mb-2 text-black">PROVE INFLUENCE</h5>
+              <p className="text-gray-600 font-body font-normal">Through ideas implemented and systems shaped</p>
             </div>
             <div className="bg-white p-6 rounded-xl border-2 border-yellow-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
               <FontAwesomeIcon icon={faRocket} className="text-yellow-500 text-2xl mb-4" />
-              <h5 className="font-bold mb-2 text-black">SHOWCASE PROFITABILITY</h5>
-              <p className="text-gray-600">In efficiency, results, and strategic ROI</p>
+              <h5 className="font-heading font-bold mb-2 text-black">SHOWCASE PROFITABILITY</h5>
+              <p className="text-gray-600 font-body font-normal">In efficiency, results, and strategic ROI</p>
             </div>
           </div>
-          <h4 className="text-xl font-bold text-black mb-4 text-center">
+          <h4 className="text-xl font-heading font-bold text-black mb-4 text-center">
             Who Should Apply?
           </h4>
-          <ul className="list-disc list-inside text-lg text-gray-700 mb-6 mx-auto max-w-md">
+          <ul className="list-disc list-inside text-lg font-body font-normal text-white mb-6 mx-auto max-w-md">
             <li>Corporate team leaders</li>
             <li>Civil servants and reformers</li>
             <li>NGO professionals</li>
             <li>Educators and administrators</li>
             <li>Innovators embedded in systems</li>
           </ul>
-          <p className="text-lg font-bold text-gray-700 mb-6 text-center">
+          <p className="text-lg font-heading font-medium text-white mb-6 text-center">
             Driving transformation from within? Pitch to prove it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/tests">
               <Button
                 text="Learn More"
-                className="bg-red-500 hover:bg-red-600 text-white font-bold"
+                className="bg-background-danger hover:bg-red-600 text-white font-bold"
                 icon={faBookOpen}
               />
             </Link>
@@ -82,7 +82,7 @@ const PitchFormatModal = ({ isOpen, onClose }) => (
           </div>
           <button
             onClick={onClose}
-            className="mt-6 text-gray-600 hover:text-gray-800 font-bold block mx-auto"
+            className="mt-6 text-white hover:text-gray-800 font-heading font-bold block mx-auto"
           >
             Close
           </button>

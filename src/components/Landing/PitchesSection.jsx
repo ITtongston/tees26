@@ -16,7 +16,7 @@ const PitchesSection = () => {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50  w-full">
+    <section className="py-20 bg-background-light w-full">
       <div className="container mx-auto px-4">
         <HeroHeader />
         <div className="grid md:grid-cols-2 gap-12 mb-24">

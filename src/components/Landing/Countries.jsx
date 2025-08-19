@@ -39,7 +39,7 @@ function Countries() {
                 alt={`${country.name} flag`}
                 className="w-[100px] h-[60px] object-contain"
               />
-              <p className="text-sm text-gray-800 font-medium mt-2 text-center">
+              <p className="text-sm text-gray-800 font-body font-medium mt-2 text-center">
                 {country.name}
               </p>
             </div>

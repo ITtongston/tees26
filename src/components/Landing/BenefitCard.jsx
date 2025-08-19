@@ -10,8 +10,8 @@ const BenefitCard = ({ icon, title, description, index }) => (
     className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center w-full max-w-sm"
   >
     <FontAwesomeIcon icon={icon} className="text-red-600 text-4xl mb-4" />
-    <h4 className="text-xl font-bold text-black mb-2">{title}</h4>
-    <p className="text-gray-600">{description}</p>
+    <h4 className="text-xl font-heading font-bold text-black mb-2">{title}</h4>
+    <p className="text-gray-600 font-body font-normal">{description}</p>
   </motion.div>
 );
 

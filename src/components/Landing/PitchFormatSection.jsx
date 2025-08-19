@@ -12,7 +12,7 @@ import {
 const PitchFormatSection = () => (
   <motion.div id="intrapreneurial-details" className="mb-28">
     <div className="bg-white rounded-xl shadow-md p-8">
-      <h3 className="text-3xl font-bold mb-6 text-red-600 text-center">
+      <h3 className="text-3xl font-heading font-bold mb-6 text-red-600 text-center">
         PITCH FORMAT
       </h3>
       <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -21,8 +21,8 @@ const PitchFormatSection = () => (
             icon={faBriefcase}
             className="text-yellow-500 text-2xl mb-4"
           />
-          <h4 className="font-bold mb-2 text-black">DEMONSTRATE VALUE</h4>
-          <p className="text-gray-600">
+          <h4 className="font-heading font-bold mb-2 text-black">DEMONSTRATE VALUE</h4>
+          <p className="text-gray-600 font-body font-normal">
             To your organization, team, or community
           </p>
         </div>
@@ -31,8 +31,8 @@ const PitchFormatSection = () => (
             icon={faUsers}
             className="text-red-500 text-2xl mb-4"
           />
-          <h4 className="font-bold mb-2 text-black">PROVE INFLUENCE</h4>
-          <p className="text-gray-600">
+          <h4 className="font-heading font-bold mb-2 text-black">PROVE INFLUENCE</h4>
+          <p className="text-gray-600 font-body font-normal">
             Through ideas implemented and systems shaped
           </p>
         </div>
@@ -41,14 +41,14 @@ const PitchFormatSection = () => (
             icon={faRocket}
             className="text-yellow-500 text-2xl mb-4"
           />
-          <h4 className="font-bold mb-2 text-black">SHOWCASE PROFITABILITY</h4>
-          <p className="text-gray-600">
+          <h4 className="font-heading font-bold mb-2 text-black">SHOWCASE PROFITABILITY</h4>
+          <p className="text-gray-600 font-body font-normal">
             In efficiency, results, and strategic ROI
           </p>
         </div>
       </div>
       <div className="text-center">
-        <p className="text-lg font-bold mb-6 text-gray-700">
+        <p className="text-lg font-heading font-medium mb-6 text-gray-700">
           Pitch Format: 5 minutes to present your VIP story. No slides. Just
           presence, proof, and power.
         </p>
