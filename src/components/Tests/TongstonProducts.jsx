@@ -21,18 +21,19 @@ const ProductCard = ({ product, index }) => (
         >
           <FontAwesomeIcon 
             icon={product.icon} 
-            className="text-3xl text-white" 
+            className="text-3xl" 
+            style={{ color: "#eab308" }}
           />
         </motion.div>
       </div>
       
       <div className="text-center flex-grow">
-        <h3 className="text-2xl font-bold mb-4 text-black">
+        <h3 className="text-2xl font-bold mb-4 text-black font-heading">
           {product.title}
         </h3>
         <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-red-500 mb-6 mx-auto"></div>
         
-        <p className="text-gray-700 mb-6 leading-relaxed">
+        <p className="text-gray-700 mb-6 leading-relaxed font-normal font-body">
           {product.description}
         </p>
       </div>
@@ -45,7 +46,7 @@ const ProductCard = ({ product, index }) => (
         >
           <Button
             text={product.linkText}
-            className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white border-0 hover:from-red-700 hover:to-red-800 px-6 py-3 font-bold shadow-md rounded-lg transition-all duration-300"
+            className="w-full bg-background-gold  text-white border-0 hover:from-red-700 hover:to-red-800 px-6 py-3 font-bold shadow-md rounded-lg transition-all duration-300 font-body"
             href={product.link}
             target="_blank"
           />
@@ -81,15 +82,15 @@ const TongstonProducts = () => (
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-6">
-          <span className="bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 font-heading">
+          <span className="text-black">
             Tongston Products
           </span> & Services
         </h2>
         
         <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-red-500 mx-auto mb-6"></div>
         
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto font-normal font-body">
           Discover our innovative solutions for institutions, educators, and learners worldwide
         </p>
       </motion.div>

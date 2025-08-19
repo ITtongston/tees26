@@ -37,17 +37,17 @@ const PitchFormatModal = ({ isOpen, onClose }) => (
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <div className="bg-white p-6 rounded-xl border-2 border-yellow-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
-              <FontAwesomeIcon icon={faBriefcase} className="text-yellow-500 text-2xl mb-4" />
+              <FontAwesomeIcon icon={faBriefcase} className="text-2xl mb-4" style={{ color: "#eab308" }}  />
               <h5 className="font-heading font-bold mb-2 text-black">DEMONSTRATE VALUE</h5>
               <p className="text-gray-600 font-body font-normal">To your organization, team, or community</p>
             </div>
             <div className="bg-white p-6 rounded-xl border-2 border-red-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
-              <FontAwesomeIcon icon={faUsers} className="text-red-500 text-2xl mb-4" />
+              <FontAwesomeIcon icon={faUsers} className="text-2xl mb-4" style={{ color: "#eab308" }} />
               <h5 className="font-heading font-bold mb-2 text-black">PROVE INFLUENCE</h5>
               <p className="text-gray-600 font-body font-normal">Through ideas implemented and systems shaped</p>
             </div>
             <div className="bg-white p-6 rounded-xl border-2 border-yellow-400 hover:shadow-lg transition-all flex flex-col items-center text-center">
-              <FontAwesomeIcon icon={faRocket} className="text-yellow-500 text-2xl mb-4" />
+              <FontAwesomeIcon icon={faRocket} className="text-2xl mb-4" style={{ color: "#eab308" }} />
               <h5 className="font-heading font-bold mb-2 text-black">SHOWCASE PROFITABILITY</h5>
               <p className="text-gray-600 font-body font-normal">In efficiency, results, and strategic ROI</p>
             </div>

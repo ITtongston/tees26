@@ -140,7 +140,8 @@ const ThemesSection = () => {
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center mb-3 sm:mb-4 shadow-md">
                   <FontAwesomeIcon 
                     icon={theme.icon} 
-                    className="text-xl sm:text-2xl text-white" 
+                    className="text-xl sm:text-2xl" 
+                    style={{ color: "#eab308" }}
                   />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2 text-black text-white">
@@ -189,7 +190,8 @@ const ThemesSection = () => {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 shadow-md">
                   <FontAwesomeIcon 
                     icon={benefit.icon} 
-                    className="text-lg sm:text-xl bg-yellow-500" 
+                    className="text-lg sm:text-xl"
+                    style={{ color: "#eab308" }} 
                   />
                 </div>
                 <h4 className="text-lg sm:text-xl font-heading font-bold text-black mb-1">

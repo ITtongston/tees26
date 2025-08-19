@@ -15,10 +15,9 @@ const benefits = [
   "Join a growing movement transforming African education",
 ]
 
-
 const TestsHero = () => {
   return (
-    <section id="tests-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-red-50">
+    <section id="tests-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-light">
       {/* Animated Particles */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
@@ -59,18 +58,18 @@ const TestsHero = () => {
               transition={{ delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-4 font-montserrat">
-                <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 font-heading">
+                <span className="text-black">
                   TESTS
                 </span>{" "}
                 2026
               </h1>
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-montserrat">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-black font-heading">
                 Tongston Entrepreneurial Student, Teacher & School Summit
               </h2>
 
-              <p className="text-lg md:text-xl font-light text-gray-700 max-w-4xl mx-auto font-lato">
+              <p className="text-lg md:text-xl font-normal text-gray-700 max-w-4xl mx-auto font-body">
                 Africa's leading entrepreneurial education competition and showcase bringing together students,
                 teachers, and schools from across the continent
               </p>
@@ -84,16 +83,16 @@ const TestsHero = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
-                <FontAwesomeIcon icon={faCalendarAlt} />
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+                <FontAwesomeIcon icon={faCalendarAlt}  style={{ color: "#eab308" }} />
                 <span>July 26, 2026</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
-                <FontAwesomeIcon icon={faGlobe} />
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+                <FontAwesomeIcon icon={faGlobe}  style={{ color: "#eab308" }} />
                 <span>Virtual & Abuja</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-bold shadow-lg">
-                <FontAwesomeIcon icon={faUsers} />
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+                <FontAwesomeIcon icon={faUsers}  style={{ color: "#eab308" }} />
                 <span>K12 Schools, Students & Educators</span>
               </div>
             </motion.div>
@@ -131,11 +130,11 @@ const TestsHero = () => {
                   whileHover={{ y: -10 }}
                   className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-200"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
-                    <FontAwesomeIcon icon={feature.icon} className="text-white text-2xl" />
+                  <div className="w-16 h-16 text-center rounded-xl flex items-center justify-center mb-6 shadow-md">
+                    <FontAwesomeIcon icon={feature.icon} className="text-2xl text-center" style={{ color: "#eab308" }} />
                   </div>
-                  <h3 className="text-xl font-black text-black mb-4 font-montserrat">{feature.title}</h3>
-                  <p className="text-base text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-black mb-4 font-heading">{feature.title}</h3>
+                  <p className="text-base text-gray-600 font-body font-normal">{feature.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -148,15 +147,15 @@ const TestsHero = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center"
             >
-              <Button
+              {/* <Button
                 text="Register for TESTS 2026"
-                className="bg-gradient-to-r from-yellow-500 to-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
+                className="bg-background-danger  hover:from-yellow-600 hover:to-red-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all font-body"
                 icon={faChevronRight}
-              />
+              /> */}
               <Link href="/">
                 <Button
                   text="Back to TES 2026"
-                  className="bg-white border-2 border-yellow-500 hover:bg-yellow-50 text-yellow-600 font-bold px-8 py-4 text-lg transition-colors shadow-md hover:shadow-lg"
+                  className="bg-background-gold  border-2 border-yellow-500 hover:bg-yellow-50 text-yellow-600 font-medium px-8 py-4 text-lg transition-colors shadow-md hover:shadow-lg font-body"
                 />
               </Link>
             </motion.div>

@@ -9,7 +9,7 @@ const BenefitCard = ({ icon, title, description, index }) => (
     viewport={{ once: true }}
     className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center w-full max-w-sm"
   >
-    <FontAwesomeIcon icon={icon} className="text-red-600 text-4xl mb-4" />
+    <FontAwesomeIcon icon={icon} className="text-4xl mb-4"  style={{ color: "#eab308" }} />
     <h4 className="text-xl font-heading font-bold text-black mb-2">{title}</h4>
     <p className="text-gray-600 font-body font-normal">{description}</p>
   </motion.div>

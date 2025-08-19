@@ -15,9 +15,9 @@ const BenefitItem = ({ benefit, index }) => (
   >
     <div className="flex items-start space-x-4">
       <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-        <FontAwesomeIcon icon={faCheckCircle} className="text-white text-sm" />
+        <FontAwesomeIcon icon={faCheckCircle} className="text-sm text-yellow-500" style={{ color: "#eab308" }} />
       </div>
-      <p className="text-gray-700 font-medium text-sm sm:text-base">{benefit}</p>
+      <p className="text-gray-700 font-normal text-sm sm:text-base font-body">{benefit}</p>
     </div>
   </motion.div>
 )
@@ -30,8 +30,8 @@ const WhyParticipate = ({ benefits }) => (
     viewport={{ once: true }}
     className="flex flex-col items-center justify-center py-8 px-4 sm:px-6 mb-12"
   >
-    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 text-red-600">🎯 Why Participate?</h3>
-    <p className="text-sm sm:text-base text-center mb-6 max-w-xl sm:max-w-2xl mx-auto text-gray-700 font-lato">
+    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-6 text-black font-heading">🎯 Why Participate?</h3>
+    <p className="text-sm sm:text-base text-center mb-6 max-w-xl sm:max-w-2xl mx-auto text-gray-700 font-normal font-body">
       TESTS offers unmatched value for students, educators, and schools.
     </p>
     <div className="flex flex-wrap justify-center gap-4 w-full max-w-5xl">

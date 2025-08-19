@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckCircle, faGraduationCap, faChalkboardTeacher, faSchool } from "@fortawesome/free-solid-svg-icons"
 import Button from "@/shared/Buttons"
 
-
-
 // Category Card Component
 const CategoryCard = ({ category, index }) => (
   <motion.div
@@ -23,15 +21,14 @@ const CategoryCard = ({ category, index }) => (
         <div
           className={`w-20 h-20 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
         >
-          <FontAwesomeIcon icon={category.icon} className="text-3xl text-white" />
+          <FontAwesomeIcon icon={category.icon} className="text-3xl" style={{ color: "#eab308" }} />
         </div>
-        <h3 className="text-2xl font-black mb-4 font-montserrat text-black">{category.title}</h3>
-        <p className="text-gray-700 font-lato">{category.description}</p>
+        <h3 className="text-2xl font-bold mb-4 text-black font-heading">{category.title}</h3>
+        <p className="text-gray-700 font-normal font-body">{category.description}</p>
       </div>
     </div>
   </motion.div>
 )
-
 
 const categories = [
   {
@@ -54,8 +51,6 @@ const categories = [
   },
 ]
 
-
-
 const TestsAbout = () => (
   <section className="py-12 bg-gradient-to-br from-yellow-50 to-red-50">
     <div className="container mx-auto px-4">
@@ -66,14 +61,14 @@ const TestsAbout = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-black text-black mb-6 font-montserrat">
-          About <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">TESTS</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 font-heading">
+          About <span className="text-black">TESTS</span>
         </h2>
-        <p className="text-base md:text-lg text-gray-700 font-lato max-w-3xl mx-auto">
+        <p className="text-base md:text-lg text-gray-700 font-normal max-w-3xl mx-auto font-body">
           Tongston Entrepreneurial Student, Teacher & School Summit (TESTS) is Africa's leading entrepreneurial education competition, uniting students, teachers, and schools in a year-long assessment and live showcase.
         </p>
         <div className="bg-gradient-to-r from-yellow-100 to-red-100 border-l-4 border-yellow-500 p-4 rounded-lg mt-6">
-          <p className="text-base font-semibold text-gray-800">
+          <p className="text-base font-medium text-gray-800 font-body">
             📚 Aligned with global standards, TESTS transforms learning into real-world application.
           </p>
         </div>
@@ -92,14 +87,14 @@ const TestsAbout = () => (
   viewport={{ once: true }}
   className="flex flex-col items-center justify-center p-6 sm:p-8"
 >
-  <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-black text-center">Open to K12 Schools, Students, & Educators</h4>
-  <p className="text-sm sm:text-base mb-6 text-gray-700 font-lato text-center max-w-xl sm:max-w-2xl">
+  <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-black text-center font-heading">Open to K12 Schools, Students, & Educators</h4>
+  <p className="text-sm sm:text-base mb-6 text-gray-700 font-normal text-center max-w-xl sm:max-w-2xl font-body">
     Join Africa's premier entrepreneurial education movement
   </p>
   <div className="flex justify-center w-full">
     <Button
       text="World K12"
-      className="bg-red-600 text-white border-2 border-white hover:bg-red-700 hover:border-yellow-300 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-lg rounded-lg transition-all duration-300"
+      className="bg-background-danger text-white border-2 border-white hover:bg-red-700 hover:border-yellow-300 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-lg rounded-lg transition-all duration-300 font-body"
       href="https://tworldk12.zohosites.com"
       target="_blank"
     />

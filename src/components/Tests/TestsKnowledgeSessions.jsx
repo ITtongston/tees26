@@ -30,11 +30,11 @@ const TopicItem = ({ topic, index }) => (
   >
     <div className="flex items-start space-x-4">
       <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
-        <FontAwesomeIcon icon={topic.icon} className="text-white text-xl" />
+        <FontAwesomeIcon icon={topic.icon} className="text-xl" style={{ color: "#eab308" }} />
       </div>
       <div>
-        <h5 className="text-lg font-bold mb-2 text-red-600">{topic.title}</h5>
-        <p className="text-gray-700 text-sm">{topic.subtitle}</p>
+        <h5 className="text-lg font-bold mb-2 text-red-600 font-heading">{topic.title}</h5>
+        <p className="text-gray-700 text-sm font-normal font-body">{topic.subtitle}</p>
       </div>
     </div>
   </motion.div>
@@ -50,7 +50,7 @@ const SessionYear = ({ session, sessionIndex }) => (
     className="relative"
   >
     <div className="text-center mb-8">
-      <h4 className="text-xl font-bold text-black bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 rounded">
+      <h4 className="text-xl font-bold text-black  bg-background-gold  border-l-4 border-yellow-500 inline-block px-4 py-2 rounded font-heading">
         ★ TEES {session.year}
       </h4>
     </div>
@@ -68,10 +68,10 @@ const FeatureItem = ({ icon, title, description, gradient }) => (
     <div
       className={`w-16 h-16 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}
     >
-      <FontAwesomeIcon icon={icon} className="text-2xl text-white" />
+      <FontAwesomeIcon icon={icon} className="text-2xl text-white" style={{ color: "#eab308" }} />
     </div>
-    <h5 className="text-lg font-bold mb-2 text-black">{title}</h5>
-    <p className="text-gray-600 text-sm">{description}</p>
+    <h5 className="text-lg font-bold mb-2 text-black font-heading">{title}</h5>
+    <p className="text-gray-600 text-sm font-normal font-body">{description}</p>
   </div>
 );
 
@@ -160,18 +160,18 @@ const TestsKnowledgeSessions = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-black mb-4 font-montserrat text-black">
+        <h2 className="text-3xlmd:text-4xl font-bold mb-4 font-heading text-black">
           TES 2026
-          <span className="bg-gradient-to-br from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
+          <span className="text-black">
             {" "}
             Knowledge-Skills-Attitude Sessions
           </span>
         </h2>
-        <p className="text-base md:text-lg text-gray-700 font-lato max-w-3xl mx-auto mb-6">
+        <p className="text-base md:text-lg text-gray-700 font-normal max-w-3xl mx-auto mb-6 font-body">
           Sessions cover enterprise, media, finance, and education, focusing on
           technology, strategy, and sustainability.
         </p>
-        <p className="text-base font-bold text-gray-800 bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 rounded">
+        <p className="text-base font-medium text-gray-800 bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 rounded font-body">
           Learn industry trends from global experts and network with leaders.
         </p>
       </motion.div>
@@ -183,7 +183,7 @@ const TestsKnowledgeSessions = () => (
         viewport={{ once: true }}
         className="mb-12"
       >
-        <h3 className="text-2xl font-bold text-center mb-8 text-red-600">
+        <h3 className="text-2xl font-bold text-center mb-8 text-red-600 font-heading">
           Previous Sessions Topics
         </h3>
         <div className="space-y-12">
@@ -196,25 +196,6 @@ const TestsKnowledgeSessions = () => (
           ))}
         </div>
       </motion.div>
-
-      {/* CTA Section (Check out Highlights) */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="video-iframe-section w-full h-[300px] md:h-[400px] flex justify-center items-center md:px-4 mb-12"
-      >
-        <iframe
-          title="TEES Highlights"
-          width="660"
-          height="400"
-          src="https://www.youtube.com/embed/78gl-NTydGE?si=GS59rk7xjQMKwKFV"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="h-[300px] md:h-[400px] rounded-2xl shadow-xl"
-        ></iframe>
-      </motion.div> */}
 
       {/* Features Grid */}
       <motion.div
