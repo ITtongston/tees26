@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSchool, faGraduationCap, faLightbulb, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import Button from "@/shared/Buttons";
+import Link from "next/link";
 
 const ProductCard = ({ product, index }) => (
   <motion.div
@@ -43,13 +44,14 @@ const ProductCard = ({ product, index }) => (
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="w-full max-w-xs"
+  
         >
+          <Link href={product.link} target="_blank" className="flex items-center justify-center">
           <Button
             text={product.linkText}
             className="w-full bg-background-gold  text-white border-0 hover:from-red-700 hover:to-red-800 px-6 py-3 font-bold shadow-md rounded-lg transition-all duration-300 font-body"
-            href={product.link}
-            target="_blank"
           />
+          </Link>
         </motion.div>
       </div>
     </div>
@@ -58,17 +60,17 @@ const ProductCard = ({ product, index }) => (
 
 const products = [
   {
-    title: "T-World for K-12 Schools, Teachers & Students",
+    title: "tworld for K-12 Schools, Teachers & Students",
     description: "A generative AI-powered, comprehensive entrepreneurial education management platform designed for pre-school, primary, and secondary schools...",
-    link: "http://tworldk12.zohosites.com",
-    linkText: "Explore T-World K-12",
+    link: "https://tworldk12.zohosites.com",
+    linkText: "Explore t-world K-12",
     icon: faSchool,
   },
   {
-    title: "T-World for Higher Education & Professionals",
+    title: "tworld for Higher Education & Professionals",
     description: "A premier all-in-one digital entrepreneurial-thinking AI-powered ecosystem for higher education students & institutions...",
     link: "https://t-world.tongston.com",
-    linkText: "Explore T-World",
+    linkText: "Explore tworld",
     icon: faGraduationCap,
   },
 ];
