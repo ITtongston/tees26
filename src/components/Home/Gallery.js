@@ -22,7 +22,7 @@ function Gallery() {
   return (
     <div className="flex flex-col gap-y-8 justify-center items-start  w-full h-[fixed] bg-white  mb-9  ">
       <section className="heading-section w-full h-[180px]  bg-opacity-80 flex justify-start items-center ">
-        <h1 className="text-xl font-bold  mx-auto  text-yellow-600 lg:text-3xl text-center font-ger">
+        <h1 className="text-xl font-bold  mx-auto  text-black  lg:text-3xl text-center font-ger">
           TEES Gallery
         </h1>
       </section>
@@ -38,7 +38,7 @@ function Gallery() {
         
         "
             >
-              <article className="text-red-600  font-black text-xl font-cur  ml-auto  flex flex-col justify-center items-center text-center   mr-6  ">
+              <article className="text-black   font-black text-xl font-cur  ml-auto  flex flex-col justify-center items-center text-center   mr-6  ">
                 {image.title}
               </article>
             </div>

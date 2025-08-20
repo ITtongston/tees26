@@ -21,7 +21,7 @@ const Nav2 = () => {
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(null);
 
   const linkClass =
-    "hover:text-red-500 transition duration-300 font-montserrat text-base font-medium cursor-pointer";
+    "hover:text-red-500 transition duration-300 text-base font-medium cursor-pointer font-body";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +56,7 @@ const Nav2 = () => {
     <div className="relative inline-block" onClick={(e) => e.stopPropagation()}>
       <button
         onClick={() => handleDesktopDropdownToggle(title)}
-        className={`${linkClass} cursor-pointer inline-flex items-center gap-1`}
+        className={`${linkClass} cursor-pointer inline-flex items-center gap-1 font-body`}
       >
         {title}
         <FontAwesomeIcon
@@ -77,7 +77,7 @@ const Nav2 = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600"
+                    className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-yellow-50 hover:text-red-600 font-body"
                     onClick={closeAllDropdowns}
                   >
                     {item.label}
@@ -85,7 +85,7 @@ const Nav2 = () => {
                 ) : item.isPage ? (
                   <Link
                     href={item.href}
-                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600"
+                    className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-yellow-50 hover:text-red-600 font-body"
                     onClick={closeAllDropdowns}
                   >
                     {item.label}
@@ -97,7 +97,7 @@ const Nav2 = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-yellow-50 hover:text-red-600 cursor-pointer"
+                    className="block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-yellow-50 hover:text-red-600 cursor-pointer font-body"
                     onClick={closeAllDropdowns}
                   >
                     {item.label}
@@ -184,7 +184,6 @@ const Nav2 = () => {
                 height={50}
                 className="md:w-[60px] md:h-[60px]"
               />
-              {/* <span className="font-bold text-lg md:text-xl">TES 2026</span> */}
             </Link>
 
             {/* Desktop Navigation */}
@@ -214,7 +213,7 @@ const Nav2 = () => {
               >
                 <Button
                   text="Register "
-                  className=" bg-red-500 hover:bg-yellow-600  bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-background-gold  hover:bg-background-danger  bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-body"
                   iconClassName="ml-2"
                 />
               </ScrollLink>
@@ -242,7 +241,7 @@ const Nav2 = () => {
                           e.stopPropagation();
                           toggleMobileDropdown(title);
                         }}
-                        className="flex justify-between items-center w-full font-semibold text-gray-800 py-2 border-b border-gray-200"
+                        className="flex justify-between items-center w-full font-medium text-gray-800 py-2 border-b border-gray-200 font-body"
                       >
                         {title}
                         <FontAwesomeIcon
@@ -262,7 +261,7 @@ const Nav2 = () => {
                                   href={item.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors font-body"
                                   onClick={closeAllDropdowns}
                                 >
                                   {item.label} ↗
@@ -270,7 +269,7 @@ const Nav2 = () => {
                               ) : item.isPage ? (
                                 <Link
                                   href={item.href}
-                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors font-body"
                                   onClick={closeAllDropdowns}
                                 >
                                   {item.label}
@@ -282,7 +281,7 @@ const Nav2 = () => {
                                   smooth={true}
                                   offset={-70}
                                   duration={500}
-                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors"
+                                  className="block text-gray-600 py-2 cursor-pointer hover:text-red-600 transition-colors font-body"
                                   onClick={closeAllDropdowns}
                                 >
                                   {item.label}
@@ -298,7 +297,7 @@ const Nav2 = () => {
 
                 <Link
                   href="mailto:tees@tongston.com"
-                  className="block font-semibold text-gray-800 py-2 border-b border-gray-200"
+                  className="block font-medium text-gray-800 py-2 border-b border-gray-200 font-body"
                   onClick={closeAllDropdowns}
                 >
                   Contact Us
@@ -318,7 +317,7 @@ const Nav2 = () => {
                     <Button
                       text="Register for TES 2026"
                       icon={faChevronRight}
-                      className="w-full bg-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg"
+                      className="w-full bg-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg font-body"
                     />
                   </ScrollLink>
 
@@ -330,7 +329,7 @@ const Nav2 = () => {
                     <Button
                       text="Explore TESTS 2026"
                       icon={faChevronRight}
-                      className="w-full bg-yellow-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md"
+                      className="w-full bg-yellow-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-lg transition-colors shadow-md font-body"
                     />
                   </Link>
                 </div>

@@ -34,7 +34,7 @@ function Statistics() {
   return (
     <div className="w-full h-[fixed] bg-white flex flex-col gap-y-8 justify-center items-start  mb-9">
       <section className="heading-section w-full h-[180px] bg-opacity-80 flex justify-center items-center ">
-        <h1 className="text-xl font-bold text-yellow-600 lg:text-3xl text-center font-ger">
+        <h1 className="text-xl font-bold text-black lg:text-3xl text-center font-ger">
           TEES Statistics
         </h1>
       </section>
@@ -50,7 +50,7 @@ function Statistics() {
                 {card.char}
               </span>
             </p>
-            <p className="text-gray-800 font-semibold  font-lato text-base text-center md:text-2xl">
+            <p className="text-black  font-semibold  font-lato text-base text-center md:text-2xl">
               {card.text}
             </p>
           </div>

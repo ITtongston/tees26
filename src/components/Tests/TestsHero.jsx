@@ -83,15 +83,15 @@ const TestsHero = () => {
               transition={{ delay: 0.4 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-black font-medium shadow-lg font-body">
                 <FontAwesomeIcon icon={faCalendarAlt}  style={{ color: "#eab308" }} />
                 <span>July 26, 2026</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-black font-medium shadow-lg font-body">
                 <FontAwesomeIcon icon={faGlobe}  style={{ color: "#eab308" }} />
                 <span>Virtual & Abuja</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-red-600 font-medium shadow-lg font-body">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-black font-medium shadow-lg font-body">
                 <FontAwesomeIcon icon={faUsers}  style={{ color: "#eab308" }} />
                 <span>K12 Schools, Students & Educators</span>
               </div>
@@ -145,17 +145,17 @@ const TestsHero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              className="w-full flex flex-col sm:flex-row gap-8 justify-center"
             >
               {/* <Button
                 text="Register for TESTS 2026"
-                className="bg-background-danger  hover:from-yellow-600 hover:to-red-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all font-body"
+                className="bg-background-gold text-white border-0 hover:bg-background-danger px-8 py-4 font-bold shadow-md rounded-lg transition-all duration-300 font-body"
                 icon={faChevronRight}
               /> */}
               <Link href="/">
                 <Button
                   text="Back to TES 2026"
-                  className="bg-background-gold  border-2 border-yellow-500 hover:bg-yellow-50 text-yellow-600 font-medium px-8 py-4 text-lg transition-colors shadow-md hover:shadow-lg font-body"
+                  className="bg-background-gold  text-white border-0 hover:bg-background-danger px-6 py-3 font-bold shadow-md rounded-lg transition-all duration-300 font-body"
                 />
               </Link>
             </motion.div>

@@ -24,7 +24,7 @@ const CategoryCard = ({ category, index }) => (
           <FontAwesomeIcon icon={category.icon} className="text-3xl" style={{ color: "#eab308" }} />
         </div>
         <h3 className="text-2xl font-bold mb-4 text-black font-heading">{category.title}</h3>
-        <p className="text-gray-700 font-normal font-body">{category.description}</p>
+        <p className="text-black font-normal font-body">{category.description}</p>
       </div>
     </div>
   </motion.div>
@@ -64,7 +64,7 @@ const TestsAbout = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 font-heading">
           About <span className="text-black">TESTS</span>
         </h2>
-        <p className="text-base md:text-lg text-gray-700 font-normal max-w-3xl mx-auto font-body">
+        <p className="text-base md:text-lg text-black font-normal max-w-3xl mx-auto font-body">
           Tongston Entrepreneurial Student, Teacher & School Summit (TESTS) is Africa's leading entrepreneurial education competition, uniting students, teachers, and schools in a year-long assessment and live showcase.
         </p>
         <div className="bg-gradient-to-r from-yellow-100 to-red-100 border-l-4 border-yellow-500 p-4 rounded-lg mt-6">
@@ -88,7 +88,7 @@ const TestsAbout = () => (
   className="flex flex-col items-center justify-center p-6 sm:p-8"
 >
   <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-black text-center font-heading">Open to K12 Schools, Students, & Educators</h4>
-  <p className="text-sm sm:text-base mb-6 text-gray-700 font-normal text-center max-w-xl sm:max-w-2xl font-body">
+  <p className="text-sm sm:text-base mb-6 text-black font-normal text-center max-w-xl sm:max-w-2xl font-body">
     Join Africa's premier entrepreneurial education movement
   </p>
   <div className="flex justify-center w-full">

@@ -24,10 +24,10 @@ const AgendaSection = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto space-y-4"
           >
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal font-body">
+            <p className="text-base sm:text-lg md:text-xl text-black font-normal font-body">
               <strong className="font-medium">Theme:</strong> Value. Influence. Profitability – Powering People, Institutions & Governments through Entrepreneurial Education, Media, Enterprise & Finance
             </p>
-            <p className="text-sm sm:text-base text-gray-600 font-normal font-body">
+            <p className="text-sm sm:text-base text-black font-normal font-body">
               <strong className="font-medium">Time:</strong> 9:00am – 6:00pm | <strong className="font-medium">Date:</strong> July 26, 2026
             </p>
           </motion.div>
@@ -42,7 +42,7 @@ const AgendaSection = () => {
             viewport={{ once: true }}
             className="p-4 sm:p-6 md:p-8 bg-white shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 rounded-lg sm:rounded-xl md:rounded-2xl"
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-red-600 mb-6 font-heading">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 font-heading">
               🌅 MORNING SESSION
             </h3>
             <div className="space-y-4 text-sm sm:text-base font-body">
@@ -69,12 +69,12 @@ const AgendaSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 p-2 rounded-lg ${item.highlight ? 'bg-yellow-50' : ''}`}
+                  className={`flex flex-col sm:flex-row  sm:justify-between sm:items-start gap-2 p-2 rounded-lg ${item.highlight ? 'bg-yellow-50' : ''}`}
                 >
                   <span className="font-medium text-black min-w-fit font-body">
                     {item.time}
                   </span>
-                  <span className="text-gray-700 text-right font-normal font-body">{item.event}</span>
+                  <span className="text-black text-right font-normal font-body">{item.event}</span>
                 </motion.div>
               ))}
             </div>
@@ -88,7 +88,7 @@ const AgendaSection = () => {
             viewport={{ once: true }}
             className="p-4 sm:p-6 md:p-8 bg-white shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 rounded-lg sm:rounded-xl md:rounded-2xl"
           >
-            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-red-600 mb-6 font-heading">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black font-bold mb-6 font-heading">
               🌇 AFTERNOON & LATE SESSION
             </h3>
             <div className="space-y-4 text-sm sm:text-base font-body">
@@ -112,12 +112,12 @@ const AgendaSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className={`flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 p-2 rounded-lg ${item.highlight ? 'bg-yellow-50' : ''}`}
+                  className={`flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 p-2 rounded-lg text-black ${item.highlight ? 'bg-yellow-50' : ''}`}
                 >
-                  <span className="font-medium text-yellow-600 min-w-fit font-body">
+                  <span className="font-medium text-black min-w-fit font-body">
                     {item.time}
                   </span>
-                  <span className="text-gray-700 text-right font-normal font-body">{item.event}</span>
+                  <span className="text-black text-right font-normal font-body">{item.event}</span>
                 </motion.div>
               ))}
             </div>

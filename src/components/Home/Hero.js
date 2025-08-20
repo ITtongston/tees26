@@ -109,15 +109,18 @@ function Hero() {
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
   ];
 

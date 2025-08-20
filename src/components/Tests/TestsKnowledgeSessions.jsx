@@ -160,7 +160,7 @@ const TestsKnowledgeSessions = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xlmd:text-4xl font-bold mb-4 font-heading text-black">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 font-heading text-black">
           TES 2026
           <span className="text-black">
             {" "}
@@ -171,7 +171,7 @@ const TestsKnowledgeSessions = () => (
           Sessions cover enterprise, media, finance, and education, focusing on
           technology, strategy, and sustainability.
         </p>
-        <p className="text-base font-medium text-black  inline-block px-4 py-2 rounded font-body">
+        <p className="text-base font-medium text-black inline-block px-4 py-2 rounded font-body">
           Learn industry trends from global experts and network with leaders.
         </p>
       </motion.div>
@@ -202,20 +202,22 @@ const TestsKnowledgeSessions = () => (
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid md:grid-cols-3 gap-6"
+        className="grid md:grid-cols-3 gap-6 mb-12"
       >
         {features.map((feature, index) => (
           <FeatureItem key={index} {...feature} />
         ))}
       </motion.div>
+      
       {/* Products Section */}
       <TongstonProducts />
+      
       {/* Agenda Section */}
-
       <Element name="agenda-section" className="element">
         <AgendaSection />
       </Element>
-        {/* Statistics Section */}
+      
+      {/* Statistics Section */}
       <Element name="statistics-section" className="element">
         <Statistics />
       </Element>
@@ -224,6 +226,7 @@ const TestsKnowledgeSessions = () => (
       <Element name="gallery-section" className="element">
         <Gallery />
       </Element>
+      
       {/* Registration Section */}
       <Element name="registration-section" className="element">
         <RegistrationSection className="full-width" />
