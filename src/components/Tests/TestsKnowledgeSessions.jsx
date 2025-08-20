@@ -33,8 +33,8 @@ const TopicItem = ({ topic, index }) => (
         <FontAwesomeIcon icon={topic.icon} className="text-xl" style={{ color: "#eab308" }} />
       </div>
       <div>
-        <h5 className="text-lg font-bold mb-2 text-red-600 font-heading">{topic.title}</h5>
-        <p className="text-gray-700 text-sm font-normal font-body">{topic.subtitle}</p>
+        <h5 className="text-lg font-bold mb-2 text-black font-heading">{topic.title}</h5>
+        <p className="text-black text-sm font-normal font-body">{topic.subtitle}</p>
       </div>
     </div>
   </motion.div>
@@ -50,7 +50,7 @@ const SessionYear = ({ session, sessionIndex }) => (
     className="relative"
   >
     <div className="text-center mb-8">
-      <h4 className="text-xl font-bold text-black  bg-background-gold  border-l-4 border-yellow-500 inline-block px-4 py-2 rounded font-heading">
+      <h4 className="text-xl font-bold text-black border-l-4 inline-block px-4 py-2 rounded font-heading">
         ★ TEES {session.year}
       </h4>
     </div>
@@ -71,7 +71,7 @@ const FeatureItem = ({ icon, title, description, gradient }) => (
       <FontAwesomeIcon icon={icon} className="text-2xl text-white" style={{ color: "#eab308" }} />
     </div>
     <h5 className="text-lg font-bold mb-2 text-black font-heading">{title}</h5>
-    <p className="text-gray-600 text-sm font-normal font-body">{description}</p>
+    <p className="text-black text-sm font-normal font-body">{description}</p>
   </div>
 );
 
@@ -167,11 +167,11 @@ const TestsKnowledgeSessions = () => (
             Knowledge-Skills-Attitude Sessions
           </span>
         </h2>
-        <p className="text-base md:text-lg text-gray-700 font-normal max-w-3xl mx-auto mb-6 font-body">
+        <p className="text-base md:text-lg text-black font-normal max-w-3xl mx-auto mb-6 font-body">
           Sessions cover enterprise, media, finance, and education, focusing on
           technology, strategy, and sustainability.
         </p>
-        <p className="text-base font-medium text-gray-800 bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 rounded font-body">
+        <p className="text-base font-medium text-black  inline-block px-4 py-2 rounded font-body">
           Learn industry trends from global experts and network with leaders.
         </p>
       </motion.div>
@@ -183,7 +183,7 @@ const TestsKnowledgeSessions = () => (
         viewport={{ once: true }}
         className="mb-12"
       >
-        <h3 className="text-2xl font-bold text-center mb-8 text-red-600 font-heading">
+        <h3 className="text-2xl font-bold text-center mb-8 text-black font-heading">
           Previous Sessions Topics
         </h3>
         <div className="space-y-12">

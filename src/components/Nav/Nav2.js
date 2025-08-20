@@ -178,7 +178,7 @@ const Nav2 = () => {
               onClick={closeAllDropdowns}
             >
               <Image
-                src="/assets/images/tees-logo.png"
+                src="/assets/images/tes26.jpg"
                 alt="TES 2026 Logo"
                 width={50}
                 height={50}
