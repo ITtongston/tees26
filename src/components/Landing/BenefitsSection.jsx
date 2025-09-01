@@ -11,9 +11,9 @@ const BenefitsSection = ({ benefits }) => (
       </h3>
       <p className="text-lg font-body font-normal text-gray-700 mb-8 text-center max-w-3xl mx-auto">
         We employ an ecosystem-centric model, providing integrated services that
-        go beyond funding support - entrepreneurial education, finance,
-        enterprise &amp; media solutions. The goal is to transform our investees
-        into valuable, influential, and profitable brands, contributing to
+        go beyond funding support entrepreneurial education, finance, enterprise
+        &amp; media solutions. The goal is to transform our investees into
+        valuable, influential, and profitable brands, contributing to
         socio-economic sustainability in Africa focused on where their needs
         are.
       </p>

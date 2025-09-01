@@ -18,7 +18,7 @@ const ThemesSection = () => {
     {
       icon: faGraduationCap,
       title: "EDUCATION",
-      bgrd: '/assets/images/background/busCard3.png',
+      bgrd: "/assets/images/background/busCard3.png",
       biz_description:
         "The first & only integrated techenabled entrepreneurial education curriculum, assessments, resource & educator training & development centre in Africa",
       features: [
@@ -30,7 +30,7 @@ const ThemesSection = () => {
     {
       icon: faBuilding,
       title: "ENTERPRISE",
-      bgrd: '/assets/images/background/busCard4.png',
+      bgrd: "/assets/images/background/busCard4.png",
       biz_description:
         "The first & only integrated tech-enabled multimedia production firm in Africa",
       features: [
@@ -42,7 +42,7 @@ const ThemesSection = () => {
     {
       icon: faGlobe,
       title: "MEDIA",
-      bgrd: '/assets/images/background/busCard1.png',
+      bgrd: "/assets/images/background/busCard1.png",
       biz_description:
         "The first & only integrated tech-enabled multimedia production, branding, marketing, events mgt & communication firm in Africa",
       features: [
@@ -54,7 +54,7 @@ const ThemesSection = () => {
     {
       icon: faChartLine,
       title: "FINANCE",
-      bgrd: '/assets/images/background/busCard2.png',
+      bgrd: "/assets/images/background/busCard2.png",
       biz_description:
         "The first & only full-service AIdriven investment, advisory & grant management solutions provider in Africa",
       features: [
@@ -99,7 +99,10 @@ const ThemesSection = () => {
   ];
 
   return (
-    <section id="themes-section" className="py-12 md:py-20 bg-background-gold w-full">
+    <section
+      id="themes-section"
+      className="py-12 md:py-20 bg-background-light w-full"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -109,14 +112,14 @@ const ThemesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl font-heading sm:text-4xl lg:text-5xl font-bold text-black mb-6 font-montserrat px-2">
-            1 World. 1 Virtual Stage.
+          <h2 className="text-3xl font-heading sm:text-4xl lg:text-5xl font-bold text-black mb-6  px-2">
+            1 World. 1 Virtual Stage
             <span className="bg-gradient-to-br font-heading from-yellow-500 via-red-500 to-red-600 bg-clip-text text-transparent">
               {" "}
               4 Themes
             </span>
           </h2>
-          <p className="text-base font-body sm:text-lg md:text-xl font-medium text-black bg-yellow-100 border-l-4 border-yellow-500 inline-block px-4 py-2 sm:px-6 sm:py-3 ">
+          <p className="text-base font-body sm:text-lg md:text-xl font-medium text-black bg-background-gray100 border-l-4 border-background-gold inline-block px-4 py-2 sm:px-6 sm:py-3 ">
             The only hybrid & global summit on Value, Influence & Profitability
           </p>
         </motion.div>
@@ -134,17 +137,22 @@ const ThemesSection = () => {
               className="relative h-full min-h-[280px] sm:min-h-[320px] rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300"
             >
               {/* Main Content */}
-              <div className="absolute bg-white inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-yellow-50 to-red-50 z-10 group-hover:opacity-0 transition-opacity duration-300"
-               style={{backgroundImage: `url(${theme.bgrd})`, backgroundSize: "cover", backgroundPosition: "center"}}
+              <div
+                className="absolute bg-white inset-0 flex flex-col items-center justify-center p-4 sm:p-6 text-center bg-gradient-to-br from-yellow-50 to-red-50 z-10 group-hover:opacity-0 transition-opacity duration-300"
+                style={{
+                  backgroundImage: `url(${theme.bgrd})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center mb-3 sm:mb-4 shadow-md">
-                  <FontAwesomeIcon 
-                    icon={theme.icon} 
-                    className="text-xl sm:text-2xl" 
+                  <FontAwesomeIcon
+                    icon={theme.icon}
+                    className="text-xl sm:text-2xl"
                     style={{ color: "#eab308" }}
                   />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2 text-black text-white">
+                <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2  text-white">
                   {theme.title}
                 </h3>
                 <p className="text-sm sm:text-base font-body font-normal text-white">
@@ -188,10 +196,10 @@ const ThemesSection = () => {
               {/* Main Content */}
               <div className="absolute inset-0 flex flex-col items-center bg-background-light  justify-center p-3 sm:p-4 text-center bg-gradient-to-br from-yellow-50 to-red-50 z-10 group-hover:opacity-0 transition-opacity duration-300">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-500 to-red-500 rounded-xl flex items-center justify-center mb-2 sm:mb-3 shadow-md">
-                  <FontAwesomeIcon 
-                    icon={benefit.icon} 
+                  <FontAwesomeIcon
+                    icon={benefit.icon}
                     className="text-lg sm:text-xl"
-                    style={{ color: "#eab308" }} 
+                    style={{ color: "#eab308" }}
                   />
                 </div>
                 <h4 className="text-lg sm:text-xl font-heading font-bold text-black mb-1">

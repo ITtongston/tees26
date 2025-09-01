@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import Head from "next/head"
-import "./global.css"
-import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import Foot from "@/components/Nav/Foot"
+import { useEffect } from "react";
+import Head from "next/head";
+import "./global.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Foot from "@/components/Nav/Foot";
+import { BackToTop } from "@/shared/BackToTop";
 
-config.autoAddCss = false
+config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -17,20 +18,20 @@ function MyApp({ Component, pageProps }) {
     const handleError = (event) => {
       // Check if error is from browser extension
       if (event.filename && event.filename.includes("chrome-extension://")) {
-        event.preventDefault()
-        console.warn("Browser extension error suppressed:", event.error)
-        return true
+        event.preventDefault();
+        console.warn("Browser extension error suppressed:", event.error);
+        return true;
       }
-    }
+    };
 
     // Add error handler
-    window.addEventListener("error", handleError)
+    window.addEventListener("error", handleError);
 
     // Cleanup
     return () => {
-      window.removeEventListener("error", handleError)
-    }
-  }, [])
+      window.removeEventListener("error", handleError);
+    };
+  }, []);
 
   return (
     <>
@@ -43,10 +44,11 @@ function MyApp({ Component, pageProps }) {
       <div>
         <Component {...pageProps} />
         <Foot />
+        <BackToTop />
         <ToastContainer />
       </div>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

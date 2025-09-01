@@ -35,7 +35,7 @@ const Button = ({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       type={type}
-      className={`w-[200px] relative overflow-hidden h-[50px] p-2 flex flex-row gap-x-2 justify-center items-center text-white font-bold font-sans text-base rounded-md border-r-8 transition-all duration-300 ${
+      className={`w-[200px]  h-[50px] p-2 flex flex-row gap-x-2 justify-center items-center text-white font-bold font-heading text-base  rounded-xl  transition-all duration-300 ${
         disabled ? "cursor-not-allowed" : "hover:scale-105"
       } ${className}`}
       style={buttonStyles}

@@ -39,7 +39,7 @@ export default function index() {
 
         {/* <RegistrationStats /> */}
 
-         {/* <Element name="gallery-section" className="element"></Element>
+        {/* <Element name="gallery-section" className="element"></Element>
         <Gallery />  */}
 
         {/* <Youtube /> */}

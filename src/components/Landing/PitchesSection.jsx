@@ -32,7 +32,7 @@ const PitchesSection = () => {
           <PitchCard
             title="INTRAPRENEURIAL PITCHES"
             subtitle="OPEN TO EMPLOYEES IN PUBLIC/PRIVATE/NON-PROFIT INSTITUTIONS ACROSS AFRICA"
-            description="Are you a VIP employee? If yes - then pitch yourself. Not all changemakers build their own businesses/organizations — some transform the ones they’re in. At TES 2026, the TEES Intrapreneurial Pitch gives bold professionals across all sectors — public, private, and non-profit — a platform to showcase how they are Valuable, Influential, and Profitable right where they are."
+            description="Are you a VIP employee? If yes  then pitch yourself. Not all changemakers build their own businesses/organizations  some transform the ones they’re in. At TES 2026, the TEES Intrapreneurial Pitch gives bold professionals across all sectors  public, private, and non-profit  a platform to showcase how they are Valuable, Influential, and Profitable right where they are."
             borderColor="border-red-500"
             highlightColor="bg-red-500"
             isEntrepreneurial={false}

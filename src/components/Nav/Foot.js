@@ -105,7 +105,7 @@ function Foot() {
         <Button
           onClick={() => toggleOpen()}
           text="Get In Touch"
-          className="md:hidden block bg-yellow-600 hover:bg-red-500 "
+          className="md:hidden block  bg-background-gold  hover:bg-red-500 "
         />
         {visible && <Modal onClose={() => toggleClose()} />}
       </section>

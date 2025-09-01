@@ -121,14 +121,14 @@ const Nav2 = () => {
     Pitch: [
       { label: "Intrapreneurs", href: "pitches-section" },
       { label: "Entrepreneurs", href: "pitches-section" },
-      { label: "K12 Students", href: "/tests", isPage: true },
+      { label: "K1-2 Students", href: "/tests", isPage: true },
       { label: "Higher Education Students", href: "/tests", isPage: true },
       { label: "Teachers", href: "/tests", isPage: true },
-      { label: "K12 Schools", href: "/tests", isPage: true },
+      { label: "K-12 Schools", href: "/tests", isPage: true },
     ],
     Explore: [
       {
-        label: "T-World K12",
+        label: "T-World K-12",
         href: "https://k12.t-world.tongston.com",
         external: true,
       },
@@ -213,7 +213,7 @@ const Nav2 = () => {
               >
                 <Button
                   text="Register "
-                  className="bg-background-gold  hover:bg-background-danger  bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-body"
+                  className="bg-background-footer_black  hover:bg-background-gold  bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-body"
                   iconClassName="ml-2"
                 />
               </ScrollLink>
@@ -317,7 +317,7 @@ const Nav2 = () => {
                     <Button
                       text="Register for TES 2026"
                       icon={faChevronRight}
-                      className="w-full bg-red-500 hover:from-yellow-600 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg font-body"
+                      className="w-full  bg-background-yellow_shade hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg font-body"
                     />
                   </ScrollLink>
 
@@ -329,7 +329,7 @@ const Nav2 = () => {
                     <Button
                       text="Explore TESTS 2026"
                       icon={faChevronRight}
-                      className="w-full bg-yellow-600 hover:bg-red-700 text-white font-medium py-3 px-4 rounded-lg transition-colors shadow-md font-body"
+                      className="w-full bg-background-footer_black  text-white font-medium py-3 px-4 rounded-lg transition-colors shadow-md font-body"
                     />
                   </Link>
                 </div>

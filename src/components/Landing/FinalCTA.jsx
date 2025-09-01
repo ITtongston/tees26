@@ -11,7 +11,7 @@ const FinalCTA = () => (
     viewport={{ once: true }}
     className="text-center mt-16"
   >
-    <div className="text-black bg-background-gold px-8 py-4 rounded-full inline-block mb-8 shadow-lg">
+    <div className="text-black bg-background-light   border-l-2 border-l-background-yellow_shade px-8 py-4  inline-block mb-8 shadow-lg">
       <span className="text-xl font-heading font-bold tracking-wide">
         OPEN TO ENTREPRENEURS IN ALL SECTORS & COUNTRIES ACROSS AFRICA
       </span>
@@ -21,7 +21,7 @@ const FinalCTA = () => (
       <Link href="https://t-ventures.tongston.com/" target="_blank">
         <Button
           text="Apply to Pitch"
-          className="bg-background-danger hover:bg-red-700 text-white font-bold px-8 py-3"
+          className=" bg-background-footer_black  h text-white font-bold px-8 py-3 w-auto"
           icon={faRocket}
         />
       </Link>
