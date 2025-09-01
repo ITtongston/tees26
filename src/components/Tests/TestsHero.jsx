@@ -93,7 +93,7 @@ const TestsHero = () => {
               </div>
               <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full text-base md:text-lg text-black font-medium shadow-lg font-body">
                 <FontAwesomeIcon icon={faUsers}  style={{ color: "#eab308" }} />
-                <span>K12 Schools, Students & Educators</span>
+                <span>K-12 Schools, Students & Educators</span>
               </div>
             </motion.div>
 

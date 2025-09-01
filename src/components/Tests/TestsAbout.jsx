@@ -33,7 +33,7 @@ const CategoryCard = ({ category, index }) => (
 const categories = [
   {
     icon: faGraduationCap,
-    title: "K12 Students",
+    title: "K-12 Students",
     description: "Nursery to Secondary School students showcase entrepreneurial thinking",
     color: "from-yellow-500 to-red-500",
   },
@@ -87,13 +87,13 @@ const TestsAbout = () => (
   viewport={{ once: true }}
   className="flex flex-col items-center justify-center p-6 sm:p-8"
 >
-  <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-black text-center font-heading">Open to K12 Schools, Students, & Educators</h4>
+  <h4 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-black text-center font-heading">Open to K-12 Schools, Students, & Educators</h4>
   <p className="text-sm sm:text-base mb-6 text-black font-normal text-center max-w-xl sm:max-w-2xl font-body">
     Join Africa's premier entrepreneurial education movement
   </p>
   <div className="flex justify-center w-full">
     <Button
-      text="World K12"
+      text="World K-12"
       className="bg-background-danger text-white border-2 border-white hover:bg-red-700 hover:border-yellow-300 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-bold shadow-lg rounded-lg transition-all duration-300 font-body"
       href="https://tworldk12.zohosites.com"
       target="_blank"

@@ -1,6 +1,38 @@
 import { motion } from "framer-motion";
 
 const AgendaSection = () => {
+  // Handler for adding event to calendar
+  const handleAddToCalendar = () => {
+    // Dummy event data - replace with actual event details when available
+    const eventData = {
+      title: "TES 2026: Value. Influence. Profitability",
+      description: "Powering People, Institutions & Governments through Entrepreneurial Education, Media, Enterprise & Finance",
+      startDate: "20260726T090000", // to be Replace July 26, 2026, 9:00 AM
+      endDate: "20260726T180000",   // to be   Replace July 26, 2026, 6:00 PM
+      location: "Online Event",     // to be Replace with actual venue when available
+      url: "https://tees26.vercel.app/" // to be Replace with actual event URL
+    };
+
+    // Create Google Calendar URL
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventData.title)}&dates=${eventData.startDate}/${eventData.endDate}&details=${encodeURIComponent(eventData.description)}&location=${encodeURIComponent(eventData.location)}&sf=true&output=xml`;
+    
+    // Open the calendar URL in a new tab
+    window.open(googleCalendarUrl, '_blank');
+    
+
+    // console.log("Add to calendar clicked with data:", eventData);
+    
+  };
+
+  // Handler for getting reminders
+  const handleGetReminders = () => {
+    // For now, this will just show an alert with subscription options Show a modal with email subscription form Or integrate with a notification service
+    alert("Subscribe to reminders for TES 2026. We'll notify you as the event approaches!");
+
+   
+    // console.log("Get reminders clicked");
+  };
+
   return (
     <section className="container mx-auto py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-yellow-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -141,6 +173,7 @@ const AgendaSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
+                onClick={handleAddToCalendar}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg  bg-background-danger font-bold rounded-lg hover:bg-gray-100 hover:text-black transition-colors shadow-lg font-body"
@@ -148,6 +181,7 @@ const AgendaSection = () => {
                 📅 Add to Calendar
               </motion.button>
               <motion.button
+                onClick={handleGetReminders}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg bg-transparent border-2 border-white hover:bg-white hover:text-black font-bold rounded-lg transition-colors font-body"
