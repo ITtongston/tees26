@@ -17,7 +17,7 @@ import { Thumbs, EffectFade, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import { Element } from "react-scroll";
 const MySwal = withReactContent(Swal);
 
 function Hero() {
@@ -109,15 +109,18 @@ function Hero() {
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
   ];
 
@@ -246,6 +249,8 @@ function Hero() {
             data-aos-mirror="true"
             className="form-container hidden md:block  w-full h-[fixed]  mt-[4rem] md:mt-0 px-5 "
           >
+            {" "}
+            <Element name="hero-forms"></Element>
             <form
               onSubmit={handleSubmit}
               className=" w-full  md:w-[350px] grid grid-cols-1 gap-x-3  gap-y-4  justify-start items-start p-2  border border-gray-800 shadow-2xl   md:ml-auto bg-white bg-opacity-40  "
