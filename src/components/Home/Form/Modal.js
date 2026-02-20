@@ -104,11 +104,13 @@ export default function Modal({ onClose }) {
         ref={modalRef}
         className="button-form-container  inset-0 relative w-full   h-[600px]  bg-white shadow-2xl   flex flex-col  z-50  p-2 "
       >
-        <Button
+        <button
           onClick={handleClose}
-          className=  {` ml-auto mr-3 p-2 w-[40px] rounded-[50px] text-4xl 
-`}          text="X"
-        />
+          className={` ml-auto mr-3 p-2  bg-background-gold  rounded-full w-12 h-12 flex justify-center items-center   text-white  text-4xl 
+`}
+        >
+          X
+        </button>
 
         <section
           data-aos="fade-up"
@@ -156,7 +158,11 @@ export default function Modal({ onClose }) {
                 className="w-full  p-3 px-2 text-gray-900 text-base font-cur  focus:outline-none 
                focus:scale-100 transform transition-transform duration-700 ease-in-out bg-white border border-gray-700 "
               /> */}
-            <Button text="Submit" type="submit">
+            <Button
+              text="Submit"
+              type="submit"
+              className="bg-black text-white "
+            >
               {loading ? "Please Wait..." : "Submit"}
             </Button>
           </form>

@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/* google fonts imports  */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +12,8 @@
   --foreground-rgb: 255, 255, 255; /* White text */
   --background-start-rgb: 0, 0, 0; /* Black background */
   --background-end-rgb: 0, 0, 0; /* Black background */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Lato", sans-serif;
 }
 
 body {
@@ -57,19 +66,19 @@ body {
   width: 100%;
 }
 
-
-
-
+.clip-bottom-edge {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+}
 
 .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
 
-
-
-.clip-bottom-edge {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%);
+.dropdown-item {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
 }
 
-/* google fonts imports  */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* .clip-bottom-edge {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 90%);
+} */

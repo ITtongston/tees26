@@ -17,7 +17,7 @@ import { Thumbs, EffectFade, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Aos from "aos";
 import "aos/dist/aos.css";
-
+import { Element } from "react-scroll";
 const MySwal = withReactContent(Swal);
 
 function Hero() {
@@ -109,15 +109,18 @@ function Hero() {
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/invest_mdagix.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/connect_hvdn8i.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
     {
       type: "video",
-      src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      // src: "https://res.cloudinary.com/tongston-dev/video/upload/learn_ruqpgy.mp4",
+      src: "https://res.cloudinary.com/tongston-dev/video/upload/pitch_itw4kw.mp4",
     },
   ];
 
@@ -165,7 +168,7 @@ function Hero() {
 
   return (
     <>
-      <div className="relative w-full  h-[800px] overflow-hidden   flex flex-col  justify-start items-start  pb-9     md:h-[700px] mb-9 ">
+      <div className="relative w-full  h-[800px] overflow-hidden   flex flex-col  justify-start items-start  pb-9     md:h-[690px] mb-9 ">
         {/* Swiper for media */}
         <Swiper
           style={{
@@ -207,7 +210,7 @@ function Hero() {
         </Swiper>
 
         <Nav2 />
-        <div className=" absolute left-0 right-0 top-0  h-[768px]   bg-black bg-opacity-65  z-30  grid grid-cols-1 gap-y-[100px] w-full md:h-[660px]   justify-center items-center  mb-9   lg:grid-cols-2  lg:px-[4rem]  ">
+        <div className=" absolute left-0 right-0 top-0  h-[768px]   bg-black bg-opacity-80  z-30  grid grid-cols-1 gap-y-[100px] w-full md:h-[660px]   justify-center items-center  mb-9   lg:grid-cols-2  lg:px-[4rem]  ">
           <section className="swiper-text-button-container h-[fixed] flex flex-col justify-start items-start px-4 gap-y-[30px] w-full relative top-[3rem] lg:top-0">
             {/* Text and Buttons with Framer Motion */}
             <motion.div
@@ -217,10 +220,10 @@ function Hero() {
               transition={{ duration: 0.9, ease: "easeOut" }}
               className="swiper-text-button-container flex flex-col gap-y-7 justify-start items-start "
             >
-              <h1 className="text-white font-bold text-3xl  font-montserrat lg:text-5xl">
+              <h1 className="text-white font-semibold text-3xl  font-heading lg:text-5xl">
                 {textsAndButtons[currentIndex].title}
               </h1>
-              <p className="text-white font-medium   font-lato  text-xl lg:text-2xl">
+              <p className="text-white font-medium   font-body  text-lg lg:text-xl">
                 {textsAndButtons[currentIndex].description}
               </p>
               {/* <Link
@@ -239,13 +242,14 @@ function Hero() {
               </Link> */}
             </motion.div>
           </section>
-
           <section
             data-aos="fade-up"
             data-aos-easing="ease-in linear"
             data-aos-mirror="true"
             className="form-container hidden md:block  w-full h-[fixed]  mt-[4rem] md:mt-0 px-5 "
           >
+            {" "}
+            <Element name="hero-forms"></Element>
             <form
               onSubmit={handleSubmit}
               className=" w-full  md:w-[350px] grid grid-cols-1 gap-x-3  gap-y-4  justify-start items-start p-2  border border-gray-800 shadow-2xl   md:ml-auto bg-white bg-opacity-40  "
@@ -294,7 +298,21 @@ function Hero() {
                 {loading ? "Please Wait..." : "Submit"}
               </Button>
             </form>
-          </section>
+          </section>{" "}
+          {/* Curve Divider */}
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]  scale-x-[-1]">
+            <svg
+              className="relative block w-[calc(100%+1.3px)] h-[100px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M321.39 56.09C176.6 65.64 75.6 105.22 0 120h1200V0C1081.4 0 960.2 33.5 816.5 44.2c-148.7 11.2-276-12.3-495.11 11.89z"
+                className="fill-white"
+              ></path>
+            </svg>
+          </div>
         </div>
       </div>
     </>
